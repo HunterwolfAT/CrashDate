@@ -35,9 +35,14 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Game1.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="ASourcecode\Character.cs" />
+    <Compile Include="ASourcecode\CrashDate.cs" />
+    <Compile Include="ASourcecode\GUI.cs" />
+    <Compile Include="ASourcecode\Item.cs" />
+    <Compile Include="ASourcecode\Player.cs" />
+    <Compile Include="ASourcecode\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ASourcecode\Sprite.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="OpenTK">
