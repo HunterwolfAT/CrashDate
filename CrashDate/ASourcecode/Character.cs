@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Content;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -25,7 +26,7 @@ namespace CrashDate
             foreach (String path in bodiepics)
             {
                 Sprite newbodypic = new Sprite();
-                newbodypic.LoadContent(myContentManager, path);
+                newbodypic.LoadContent(myContentManager, "Graphics\\" + path);
                 bodies.Add(newbodypic);
             }
 
@@ -33,14 +34,15 @@ namespace CrashDate
             foreach (String path in facepics)
             {
                 Sprite newfacepic = new Sprite();
-                newfacepic.LoadContent(myContentManager, path);
+                newfacepic.LoadContent(myContentManager, "Graphics\\" + path);
                 faces.Add(newfacepic);
             }
         }
 
         public void Draw(SpriteBatch mySpriteBatch) {
+            bodies[actbody].Position = new Vector2(1100, 580);
             bodies[actbody].Draw(mySpriteBatch);
-            faces[actface].Draw(mySpriteBatch);
+            //faces[actface].Draw(mySpriteBatch);
         }
     }
 }

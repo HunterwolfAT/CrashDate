@@ -23,6 +23,7 @@ namespace CrashDate
         int WIDTH = 1920;
 
         GUI gui;
+        Character testy;
 
         public Game1() : base()
         {
@@ -32,7 +33,7 @@ namespace CrashDate
             graphics.PreferredBackBufferHeight = HEIGHT;
             graphics.PreferredBackBufferWidth = WIDTH;
 
-            graphics.ToggleFullScreen();
+            //graphics.ToggleFullScreen();
         }
 
         /// <summary>
@@ -45,6 +46,12 @@ namespace CrashDate
         {
             // TODO: Add your initialization logic here
             gui = new GUI(this.Content);
+            gui.WriteMSG("Es ist so ein schöner Tag!\nKomm Senpai, lass und Schlittschulaufen gehen! Es sieht so herrlich aus!");
+
+            List<String> body = new List<String>();
+            List<String> face = new List<String>();
+            body.Add("testchar");
+            testy = new Character("Testy", body, face, this.Content);
             base.Initialize();
         }
 
@@ -80,6 +87,7 @@ namespace CrashDate
                 Exit();
 
             // TODO: Add your update logic here
+            gui.Update();
 
             base.Update(gameTime);
         }
@@ -93,8 +101,10 @@ namespace CrashDate
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
 
+            gui.DrawBackground(spriteBatch);
+            testy.Draw(spriteBatch);
             gui.Draw(spriteBatch);
 
             spriteBatch.End();

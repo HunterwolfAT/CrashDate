@@ -19,6 +19,9 @@ namespace CrashDate
         // Sprites for Events
         Sprite textbox;
         float textboxopac = 0.5f;
+        String CompleteMSG = "";
+        String DisplayMSG = "";
+        Boolean Idle = true;
 
         // Menu Sprites
 
@@ -34,27 +37,47 @@ namespace CrashDate
             
         }
 
-        public void PrintMSGText(SpriteBatch mySpriteBatch, String message, Vector2 position, Color color, Color bordercolor)
+        public void Update()
+        {
+            if (CompleteMSG != DisplayMSG)
+            {
+                DisplayMSG = CompleteMSG.Substring(0, DisplayMSG.Length + 1);
+            }
+            else
+                Idle = true;
+        }
+
+        public void WriteMSG(String msg)
+        {
+            CompleteMSG = msg;
+            Idle = false;
+        }
+
+        public void PrintMSGText(SpriteBatch mySpriteBatch, Vector2 position, Color color, Color bordercolor)
         {
             float scale = 1f;   // The thickness of the font-border
 
             bordercolor = Color.Black;
 
             // Draw the border
-            mySpriteBatch.DrawString(msgfont, message, position + new Vector2(1 * scale, 1 * scale), bordercolor);
-            mySpriteBatch.DrawString(msgfont, message, position + new Vector2(-1 * scale, -1 * scale), bordercolor);
-            mySpriteBatch.DrawString(msgfont, message, position + new Vector2(-1 * scale, 1 * scale), bordercolor);
-            mySpriteBatch.DrawString(msgfont, message, position + new Vector2(1 * scale, -1 * scale), bordercolor);
+            mySpriteBatch.DrawString(msgfont, DisplayMSG, position + new Vector2(1 * scale, 1 * scale), bordercolor);
+            mySpriteBatch.DrawString(msgfont, DisplayMSG, position + new Vector2(-1 * scale, -1 * scale), bordercolor);
+            mySpriteBatch.DrawString(msgfont, DisplayMSG, position + new Vector2(-1 * scale, 1 * scale), bordercolor);
+            mySpriteBatch.DrawString(msgfont, DisplayMSG, position + new Vector2(1 * scale, -1 * scale), bordercolor);
             
             // Draw the actual message
-            mySpriteBatch.DrawString(msgfont, message, position, color);
+            mySpriteBatch.DrawString(msgfont, DisplayMSG, position, color);
 
         }
 
-        public void Draw(SpriteBatch mySpriteBatch) {
+        public void DrawBackground(SpriteBatch mySpriteBatch)
+        {
             background.Draw(mySpriteBatch);
+        }
+
+        public void Draw(SpriteBatch mySpriteBatch) {
             textbox.Draw(mySpriteBatch, textboxopac);
-            PrintMSGText(mySpriteBatch, "Es ist so ein schöner Tag!\nKomm Senpai, lass und Schlittschulaufen gehen! Es sieht so herrlich aus!", new Vector2(60, 700), Color.White, Color.Black);
+            PrintMSGText(mySpriteBatch, new Vector2(60, 700), Color.White, Color.Black);
         }
     }
 }

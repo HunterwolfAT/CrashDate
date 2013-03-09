@@ -2,7 +2,6 @@ C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\Lidg
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\MonoGame.Framework.dll
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\OpenTK.dll
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\Tao.Sdl.dll
-C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\obj\x86\Debug\CrashDate.csprojResolveAssemblyReference.cache
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\obj\x86\Debug\CrashDate.exe
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\obj\x86\Debug\CrashDate.pdb
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\CrashDate.exe
@@ -10,3 +9,5 @@ C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\Cras
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\Content\Graphics\527322.xnb
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\Content\Graphics\textbox.xnb
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\Content\Fonts\MSGFont.xnb
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\obj\x86\Debug\CrashDate.csprojResolveAssemblyReference.cache
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\Content\Graphics\testchar.xnb
