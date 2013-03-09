@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CrashDate.ASourcecode
+namespace CrashDate
 {
     public class Item
     {

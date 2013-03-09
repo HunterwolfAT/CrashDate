@@ -7,3 +7,5 @@ C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\obj\x86\Debug\CrashDate.
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\obj\x86\Debug\CrashDate.pdb
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\CrashDate.exe
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\CrashDate.pdb
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\Content\Graphics\527322.xnb
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\Content\Graphics\textbox.xnb

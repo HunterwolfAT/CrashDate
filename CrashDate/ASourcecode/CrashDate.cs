@@ -19,10 +19,20 @@ namespace CrashDate
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        int HEIGHT = 1080;
+        int WIDTH = 1920;
+
+        GUI gui;
+
         public Game1() : base()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            graphics.PreferredBackBufferHeight = HEIGHT;
+            graphics.PreferredBackBufferWidth = WIDTH;
+
+            graphics.ToggleFullScreen();
         }
 
         /// <summary>
@@ -34,7 +44,7 @@ namespace CrashDate
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            gui = new GUI(this.Content);
             base.Initialize();
         }
 
@@ -85,6 +95,7 @@ namespace CrashDate
             // TODO: Add your drawing code here
             spriteBatch.Begin();
 
+            gui.Draw(spriteBatch);
 
             spriteBatch.End();
             base.Draw(gameTime);
