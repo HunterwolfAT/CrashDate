@@ -19,21 +19,32 @@ namespace CrashDate
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        int HEIGHT = 1080;
-        int WIDTH = 1920;
+        float HEIGHT = 1080f;
+        float WIDTH = 1920f;
+
+        int VHEIGHT = 1080;
+        int VWIDTH = 1920;
 
         GUI gui;
         Character testy;
 
+        KeyboardState newkeystate;
+        KeyboardState oldkeystate;
+
         public Game1() : base()
         {
             graphics = new GraphicsDeviceManager(this);
+
+            //Set the initial resolution BEFORE Resoution.Init()
+            graphics.PreferredBackBufferHeight = VHEIGHT;
+            graphics.PreferredBackBufferWidth = VWIDTH;
+
+            Resolution.Init(ref graphics);
+
             Content.RootDirectory = "Content";
 
-            graphics.PreferredBackBufferHeight = HEIGHT;
-            graphics.PreferredBackBufferWidth = WIDTH;
-
-            //graphics.ToggleFullScreen();
+            Resolution.SetVirtualResolution((int)WIDTH, (int)HEIGHT);
+            Resolution.SetResolution(VWIDTH, VHEIGHT, false);
         }
 
         /// <summary>
@@ -46,7 +57,7 @@ namespace CrashDate
         {
             // TODO: Add your initialization logic here
             gui = new GUI(this.Content);
-            gui.WriteMSG("Es ist so ein schöner Tag!\nKomm Senpai, lass und Schlittschulaufen gehen! Es sieht so herrlich aus!");
+            gui.WriteMSG("Es ist so ein schöner Tag!\nKomm Senpai, lass uns Schlittschulaufen gehen! Es sieht so herrlich aus!");
 
             List<String> body = new List<String>();
             List<String> face = new List<String>();
@@ -83,8 +94,7 @@ namespace CrashDate
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
+            CheckControls();
 
             // TODO: Add your update logic here
             gui.Update();
@@ -98,17 +108,50 @@ namespace CrashDate
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            //GraphicsDevice.Clear(Color.CornflowerBlue);
+            Resolution.BeginDraw();
 
             // TODO: Add your drawing code here
-            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
-
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearWrap, DepthStencilState.None, RasterizerState.CullNone, null, Resolution.getTransformationMatrix());
+            
             gui.DrawBackground(spriteBatch);
+            
             testy.Draw(spriteBatch);
+            
             gui.Draw(spriteBatch);
 
             spriteBatch.End();
             base.Draw(gameTime);
         }
+
+        private void CheckControls()
+        {
+            newkeystate = Keyboard.GetState();
+            // END THE GAME
+            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+                Exit();
+            
+            // CHANGE RESOLUTION
+            if (newkeystate.IsKeyDown(Keys.F2) && oldkeystate.IsKeyUp(Keys.F2))
+            {
+                if (graphics.PreferredBackBufferHeight == 1080)
+                {
+                    Resolution.SetResolution(1280, 720, graphics.IsFullScreen);
+                }
+                else if (graphics.PreferredBackBufferHeight == 720)
+                {
+                    Resolution.SetResolution(1920, 1080, graphics.IsFullScreen);
+                }
+                graphics.ApplyChanges();
+            }
+            // TOGGLE FULLSCREEN
+            if (newkeystate.IsKeyDown(Keys.F5) && oldkeystate.IsKeyUp(Keys.F5))
+            {
+                Resolution.ToggleFullscreen();
+            }
+
+            oldkeystate = newkeystate;
+        }
+
     }
 }
