@@ -50,7 +50,7 @@ namespace CrashDate
             Content.RootDirectory = "Content";      // Defines where every game asset can be found
 
             Resolution.SetVirtualResolution((int)WIDTH, (int)HEIGHT);
-            Resolution.SetResolution(VWIDTH, VHEIGHT, false);
+            Resolution.SetResolution(VWIDTH, VHEIGHT, true);
         }
 
         /// <summary>

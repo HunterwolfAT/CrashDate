@@ -39,14 +39,19 @@ namespace CrashDate
                         Script.Add(line);
                     }
                 }
+                runScript = true;
+                cPointer = 0;
+                goToNextCommand = true;
             }
             catch
             {
                 Error("run", "Could not find the script I was supposed to run!");
+                runScript = false;
             }
-            runScript = true;
-            cPointer = 0;
-            goToNextCommand = true;
+
+            if (Script.Count() == 0)
+                runScript = false;
+            
         }
 
         public void ReloadScript()
@@ -83,104 +88,121 @@ namespace CrashDate
                         goToNextCommand = false;
                     }
                     #endregion
-                    #region Set Background
-                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ SET THE BACKGROUND
-                    // Changes the background image to the named sprite
-                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    if (Script[cPointer].Substring(0,5) == "bgset")
+                    if (Script[cPointer].Length > 5)
                     {
-                        String newbg = Script[cPointer].Substring(6, Script[cPointer].Length - 6);
-                        game.gui.SetBackground(game.Content, newbg);
-                    }
-                    #endregion
-                    #region Fade Background
-                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ FADE TO BACKGROUND
-                    // Fades the background image to the named sprite
-                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    if (Script[cPointer].Substring(0, 6) == "bgfade")
-                    {
-                        String newbg = Script[cPointer].Substring(7, Script[cPointer].Length - 7);
-                        game.gui.FadeBackground(game.Content, newbg);
-                    }
-                    #endregion
-                    #region Run Script
-                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ RUN A SCRIPT
-                    // Run another script
-                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    if (Script[cPointer].Substring(0, 3) == "run")
-                    {
-                        String nextscript = Script[cPointer].Substring(4, Script[cPointer].Length - 4);
-                        PlayScript(nextscript);
-                    }
-                    #endregion
-                    // Characters Commands
-                    #region Introduce Character
-                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ INTRODUCE CHARACTER
-                    // Sets a character active for the scene, making it appear
-                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    if (Script[cPointer].Substring(0, 5) == "ichar")
-                    {
-                        String character = Script[cPointer].Substring(6, Script[cPointer].Length - 6);
-                        activechar = game.charmanager.GetChar(character);
-                        activechar.active = true;
-                    }
-                    #endregion
-                    #region Fade In Character
-                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ FADE IN CHARACTER
-                    // Sets a character active for the scene, making it appear
-                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    if (Script[cPointer].Substring(0, 6) == "fichar")
-                    {
-                        String character = Script[cPointer].Substring(7, Script[cPointer].Length - 7);
-                        activechar = game.charmanager.GetChar(character);
-                        activechar.active = true;
-                        activechar.Fade(true);
-                    }
-                    #endregion
-                    #region Focus Character
-                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ FOCUS ON CHARACTER
-                    // Makes a character "active" for the script, focussing commands on it
-                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    if (Script[cPointer].Substring(0, 5) == "fchar")
-                    {
-                        String character = Script[cPointer].Substring(6, Script[cPointer].Length - 6);
-                        activechar = game.charmanager.GetChar(character);
-                    }
-                    #endregion
-                    #region Change Body
-                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ CHANGE BODY
-                    // Swaps the body of the active character
-                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    if (Script[cPointer].Substring(0, 4) == "body")
-                    {
-                        String bodynumber = Script[cPointer].Substring(5, Script[cPointer].Length - 5);
-                        if (activechar != null)
+                        #region Set Background
+                        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ SET THE BACKGROUND
+                        // Changes the background image to the named sprite
+                        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                        if (Script[cPointer].Substring(0, 5) == "bgset")
                         {
-                            int body;
-                            int.TryParse(bodynumber, out body);
-                            activechar.ChangeBody(body);
+                            String newbg = Script[cPointer].Substring(6, Script[cPointer].Length - 6);
+                            game.gui.SetBackground(game.Content, newbg);
                         }
-                        else
-                            Error("body", "I don't know what character you mean!");
-                    }
-                    #endregion
-                    #region Change Face
-                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ CHANGE BODY
-                    // Swaps the body of the active character
-                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    if (Script[cPointer].Substring(0, 4) == "face")
-                    {
-                        String bodynumber = Script[cPointer].Substring(5, Script[cPointer].Length - 5);
-                        if (activechar != null)
+                        #endregion
+                        #region Fade Background
+                        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ FADE TO BACKGROUND
+                        // Fades the background image to the named sprite
+                        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+
+                        if (Script[cPointer].Substring(0, 6) == "bgfade")
                         {
-                            int face;
-                            int.TryParse(bodynumber, out face);
-                            activechar.ChangeFace(face);
+                            String newbg = Script[cPointer].Substring(7, Script[cPointer].Length - 7);
+                            game.gui.FadeBackground(game.Content, newbg);
                         }
-                        else
-                            Error("face", "I don't know what character you mean!");
+                        #endregion
+                        #region Run Script
+                        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ RUN A SCRIPT
+                        // Run another script
+                        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                        if (Script[cPointer].Substring(0, 3) == "run")
+                        {
+                            String nextscript = Script[cPointer].Substring(4, Script[cPointer].Length - 4);
+                            PlayScript(nextscript);
+                        }
+                        #endregion
+                        // Characters Commands
+                        #region Introduce Character
+                        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ INTRODUCE CHARACTER
+                        // Sets a character active for the scene, making it appear
+                        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                        if (Script[cPointer].Substring(0, 5) == "ichar")
+                        {
+                            String character = Script[cPointer].Substring(6, Script[cPointer].Length - 6);
+                            activechar = game.charmanager.GetChar(character);
+                            activechar.active = true;
+                        }
+                        #endregion
+                        #region Fade In Character
+                        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ FADE IN CHARACTER
+                        // Sets a character active for the scene, making it appear
+                        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                        if (Script[cPointer].Substring(0, 6) == "fichar")
+                        {
+                            String character = Script[cPointer].Substring(7, Script[cPointer].Length - 7);
+                            activechar = game.charmanager.GetChar(character);
+                            activechar.active = true;
+                            activechar.Fade(true);
+                        }
+                        #endregion
+                        #region Fade Out Character
+                        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ FADE OUT CHARACTER
+                        // Removes a character from the scene, making it disappear
+                        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                        if (Script[cPointer].Substring(0, 6) == "fochar")
+                        {
+                            String character = Script[cPointer].Substring(7, Script[cPointer].Length - 7);
+                            activechar = game.charmanager.GetChar(character);
+                            activechar.Fade(false);
+                        }
+                        #endregion
+                        #region Focus Character
+                        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ FOCUS ON CHARACTER
+                        // Makes a character "active" for the script, focussing commands on it
+                        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                        if (Script[cPointer].Substring(0, 5) == "fchar")
+                        {
+                            String character = Script[cPointer].Substring(6, Script[cPointer].Length - 6);
+                            activechar = game.charmanager.GetChar(character);
+                        }
+                        #endregion
+                        #region Change Body
+                        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ CHANGE BODY
+                        // Swaps the body of the active character
+                        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                        if (Script[cPointer].Substring(0, 4) == "body")
+                        {
+                            String bodynumber = Script[cPointer].Substring(5, Script[cPointer].Length - 5);
+                            if (activechar != null)
+                            {
+                                int body;
+                                int.TryParse(bodynumber, out body);
+                                activechar.ChangeBody(body);
+                            }
+                            else
+                                Error("body", "I don't know what character you mean!");
+                        }
+                        #endregion
+                        #region Change Face
+                        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ CHANGE BODY
+                        // Swaps the body of the active character
+                        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                        if (Script[cPointer].Substring(0, 4) == "face")
+                        {
+                            String bodynumber = Script[cPointer].Substring(5, Script[cPointer].Length - 5);
+                            if (activechar != null)
+                            {
+                                int face;
+                                int.TryParse(bodynumber, out face);
+                                activechar.ChangeFace(face);
+                            }
+                            else
+                                Error("face", "I don't know what character you mean!");
+                        }
+                        #endregion
                     }
-                    #endregion
                 }
 
                 if (cPointer < Script.Count - 1)
