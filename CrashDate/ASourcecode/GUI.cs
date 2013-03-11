@@ -8,7 +8,7 @@ using System.Text;
 
 namespace CrashDate
 {
-    class GUI
+    public class GUI
     {
         // Text-Font
         SpriteFont msgfont;
@@ -19,15 +19,19 @@ namespace CrashDate
         // Sprites for Events
         Sprite textbox;
         float textboxopac = 0.5f;
+
+        // Textbox Variables
         String CompleteMSG = "";
         String DisplayMSG = "";
-        Boolean Idle = true;
+        public Boolean Idle = true;
+        float MSGSpeed = 1f;
+        float MSGCounter = 0f;
 
         // Menu Sprites
 
         public GUI(ContentManager myContentManager) {
             background = new Sprite();
-            background.LoadContent(myContentManager, "Graphics\\527322");
+            //background.LoadContent(myContentManager, "Graphics\\527322");
 
             textbox = new Sprite();
             textbox.LoadContent(myContentManager, "Graphics\\textbox");
@@ -41,7 +45,12 @@ namespace CrashDate
         {
             if (CompleteMSG != DisplayMSG)
             {
-                DisplayMSG = CompleteMSG.Substring(0, DisplayMSG.Length + 1);
+                MSGCounter += MSGSpeed;
+                while (MSGCounter >= 1f && CompleteMSG != DisplayMSG)
+                {
+                    DisplayMSG = CompleteMSG.Substring(0, DisplayMSG.Length + 1);
+                    MSGCounter -= 1f;
+                }
             }
             else
                 Idle = true;
@@ -50,7 +59,9 @@ namespace CrashDate
         public void WriteMSG(String msg)
         {
             CompleteMSG = msg;
+            DisplayMSG = "";
             Idle = false;
+            MSGCounter = 0f;
         }
 
         public void PrintMSGText(SpriteBatch mySpriteBatch, Vector2 position, Color color, Color bordercolor)
@@ -78,6 +89,16 @@ namespace CrashDate
         public void Draw(SpriteBatch mySpriteBatch) {
             textbox.Draw(mySpriteBatch, textboxopac);
             PrintMSGText(mySpriteBatch, new Vector2(60, 700), Color.White, Color.Black);
+        }
+
+        public void SetMSGSpeed(float speed)
+        {
+            MSGSpeed = speed;
+        }
+
+        public void SetBackground(ContentManager myContentManager, String name)
+        {
+            background.LoadContent(myContentManager, "Graphics\\" + name);
         }
     }
 }

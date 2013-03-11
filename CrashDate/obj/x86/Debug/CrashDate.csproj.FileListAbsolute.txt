@@ -6,8 +6,14 @@ C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\obj\x86\Debug\CrashDate.
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\obj\x86\Debug\CrashDate.pdb
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\CrashDate.exe
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\CrashDate.pdb
-C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\Content\Graphics\527322.xnb
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\Content\Graphics\textbox.xnb
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\Content\Fonts\MSGFont.xnb
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\obj\x86\Debug\CrashDate.csprojResolveAssemblyReference.cache
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\Content\Graphics\testchar.xnb
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\Content\Scripts\Test.cds
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\Content\Graphics\twgok.xnb
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\Content\Graphics\schneelandschaft.xnb
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\Content\Graphics\Chars\Testy\testy_happy.xnb
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\Content\Graphics\Chars\Testy\testy_normal.xnb
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\Content\Graphics\Chars\Testy\testy_shy.xnb
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\Content\Graphics\Chars\Testy\testy_angry.xnb

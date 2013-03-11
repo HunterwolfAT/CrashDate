@@ -54,6 +54,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ASourcecode\Character.cs" />
+    <Compile Include="ASourcecode\CharacterManager.cs" />
     <Compile Include="ASourcecode\CrashDate.cs" />
     <Compile Include="ASourcecode\GUI.cs" />
     <Compile Include="ASourcecode\Item.cs" />
@@ -85,7 +86,7 @@
     <Content Include="SDL.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Graphics\527322.xnb">
+    <Content Include="Content\Graphics\schneelandschaft.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -128,6 +129,26 @@
     <Content Include="Content\Graphics\testchar.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Graphics\twgok.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Graphics\Chars\Testy\testy_happy.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Graphics\Chars\Testy\testy_normal.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Graphics\Chars\Testy\testy_shy.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Graphics\Chars\Testy\testy_angry.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Content\Scripts\Test.cds">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

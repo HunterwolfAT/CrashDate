@@ -98,21 +98,16 @@ namespace CrashDate
                 //        _Device.ApplyChanges();
                 //    }
                 //}
-
-
-                    _Device.PreferredBackBufferWidth = _VWidth;
-                    _Device.PreferredBackBufferHeight = _VHeight;
-                    _Device.IsFullScreen = true;
-                    _Device.ApplyChanges();
-                    _Device.IsFullScreen = false;
-                    _Device.ApplyChanges();
-                    _Device.PreferredBackBufferWidth = _Width;
-                    _Device.PreferredBackBufferHeight = _Height;
-                    _Device.IsFullScreen = true;
-                    _Device.ApplyChanges();
-
-
-
+                _Device.PreferredBackBufferWidth = _VWidth;
+                _Device.PreferredBackBufferHeight = _VHeight;
+                _Device.IsFullScreen = true;
+                _Device.ApplyChanges();
+                _Device.IsFullScreen = false;
+                _Device.ApplyChanges();
+                _Device.PreferredBackBufferWidth = _Width;
+                _Device.PreferredBackBufferHeight = _Height;
+                _Device.IsFullScreen = true;
+                _Device.ApplyChanges();
             }
 
             _dirtyMatrix = true;

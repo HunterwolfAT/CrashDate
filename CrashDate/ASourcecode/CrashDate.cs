@@ -16,21 +16,27 @@ namespace CrashDate
     /// </summary>
     public class Game1 : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        // ################## SYSTEM VARIABLES ##################
+        GraphicsDeviceManager graphics;        // XNA Object that handles the graphicscard and screenmodes
+        SpriteBatch spriteBatch;               // XNA Object that handles rendering sprites to the screen
 
-        float HEIGHT = 1080f;
-        float WIDTH = 1920f;
-
-        int VHEIGHT = 1080;
+        int VHEIGHT = 1080;                    // The VIRTUAL Resolution - The resolution we are working with (fixed)
         int VWIDTH = 1920;
 
-        GUI gui;
-        Character testy;
+        float HEIGHT = 1080f;                  // The RENDERED Resolution - This is the displayed resolution (changable)
+        float WIDTH = 1920f;
 
-        KeyboardState newkeystate;
-        KeyboardState oldkeystate;
+        // ################# OBJECT DECLARATION #################
+        public GUI gui;
+        Scripthandler scripth;
+        public CharacterManager charmanager;
 
+        // ################## GAME VARIABLES ####################
+        // Control variables
+        KeyboardState newkeystate;  // Saves the current state of the keyboard
+        KeyboardState oldkeystate;  // Saves the state of the keyboard of the last tick
+
+        // Game Constructor
         public Game1() : base()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -41,7 +47,7 @@ namespace CrashDate
 
             Resolution.Init(ref graphics);
 
-            Content.RootDirectory = "Content";
+            Content.RootDirectory = "Content";      // Defines where every game asset can be found
 
             Resolution.SetVirtualResolution((int)WIDTH, (int)HEIGHT);
             Resolution.SetResolution(VWIDTH, VHEIGHT, false);
@@ -57,12 +63,13 @@ namespace CrashDate
         {
             // TODO: Add your initialization logic here
             gui = new GUI(this.Content);
-            gui.WriteMSG("Es ist so ein schöner Tag!\nKomm Senpai, lass uns Schlittschulaufen gehen! Es sieht so herrlich aus!");
+            //gui.WriteMSG("Es ist so ein schöner Tag!\nKomm Senpai, lass uns Schlittschulaufen gehen! Es sieht so herrlich aus!");
 
-            List<String> body = new List<String>();
-            List<String> face = new List<String>();
-            body.Add("testchar");
-            testy = new Character("Testy", body, face, this.Content);
+            scripth = new Scripthandler(this);
+            scripth.PlayScript("Test");
+
+            charmanager = new CharacterManager();
+            
             base.Initialize();
         }
 
@@ -74,7 +81,7 @@ namespace CrashDate
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            charmanager.LoadCharacters(this.Content);
             // TODO: use this.Content to load your game content here
         }
 
@@ -97,6 +104,7 @@ namespace CrashDate
             CheckControls();
 
             // TODO: Add your update logic here
+            scripth.Update();
             gui.Update();
 
             base.Update(gameTime);
@@ -115,8 +123,8 @@ namespace CrashDate
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearWrap, DepthStencilState.None, RasterizerState.CullNone, null, Resolution.getTransformationMatrix());
             
             gui.DrawBackground(spriteBatch);
-            
-            testy.Draw(spriteBatch);
+
+            charmanager.Draw(spriteBatch);
             
             gui.Draw(spriteBatch);
 
@@ -127,9 +135,21 @@ namespace CrashDate
         private void CheckControls()
         {
             newkeystate = Keyboard.GetState();
+
             // END THE GAME
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+
+            // PRESSING ENTER
+            if (newkeystate.IsKeyDown(Keys.Enter) && oldkeystate.IsKeyUp(Keys.Enter))
+            {
+                gui.SetMSGSpeed(4f);
+                scripth.PushAccept();
+            }
+            if (newkeystate.IsKeyUp(Keys.Enter) && oldkeystate.IsKeyDown(Keys.Enter))
+            {
+                gui.SetMSGSpeed(1f);
+            }
             
             // CHANGE RESOLUTION
             if (newkeystate.IsKeyDown(Keys.F2) && oldkeystate.IsKeyUp(Keys.F2))
