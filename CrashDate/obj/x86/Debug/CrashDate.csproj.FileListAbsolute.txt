@@ -17,3 +17,4 @@ C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\Cont
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\Content\Graphics\Chars\Testy\testy_normal.xnb
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\Content\Graphics\Chars\Testy\testy_shy.xnb
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\Content\Graphics\Chars\Testy\testy_angry.xnb
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Debug\Content\Scripts\Test2.cds

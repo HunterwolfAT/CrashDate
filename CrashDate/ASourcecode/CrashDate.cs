@@ -144,11 +144,11 @@ namespace CrashDate
             if (newkeystate.IsKeyDown(Keys.Enter) && oldkeystate.IsKeyUp(Keys.Enter))
             {
                 gui.SetMSGSpeed(4f);
-                scripth.PushAccept();
             }
             if (newkeystate.IsKeyUp(Keys.Enter) && oldkeystate.IsKeyDown(Keys.Enter))
             {
                 gui.SetMSGSpeed(1f);
+                scripth.PushAccept();
             }
             
             // CHANGE RESOLUTION
