@@ -3,9 +3,9 @@ bgset schneelandschaft
 // Die erste Textbox ausgeben
 s Bitte gib diesen Text aus
 // Den Hintergrund auf "twgok" ändern
-bgset twgok
+bgfade twgok
 // Charakter "Testy" aktiveren
-ichar Testy
+fichar Testy
 // Mehr Sätze sagen
 s Und dann noch einen.\nJa diesen! Sehr gut! So ist das!
 body 2

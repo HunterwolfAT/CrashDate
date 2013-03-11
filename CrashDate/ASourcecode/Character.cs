@@ -15,6 +15,8 @@ namespace CrashDate
         List<Sprite> faces;
         public bool active;
         int opacity;
+        int fading;
+        int fadestep = 10;
         int actbody;
         int actface;
 
@@ -24,6 +26,7 @@ namespace CrashDate
             actface = 0;
 
             active = false;
+            fading = 0;
             opacity = 0;
 
             bodies = new List<Sprite>();
@@ -40,6 +43,24 @@ namespace CrashDate
                 Sprite newfacepic = new Sprite();
                 newfacepic.LoadContent(myContentManager, "Graphics\\Chars\\" + name + "\\"  + path);
                 faces.Add(newfacepic);
+            }
+        }
+
+        public void Update()
+        {
+            if (fading != 0)
+            {
+                opacity += fadestep * fading;
+                if (opacity >= 255)
+                {
+                    opacity = 255;
+                    fading = 0;
+                }
+                if (opacity <= 0)
+                {
+                    opacity = 0;
+                    fading = 0;
+                }
             }
         }
 
@@ -64,6 +85,20 @@ namespace CrashDate
         {
             if (body <= bodies.Count)
                 actbody = body;
+        }
+
+        public void Fade(bool fadein)
+        {
+            if (fadein)
+            {
+                fading = -1;
+                opacity = 255;
+            }
+            else
+            {
+                fading = 1;
+                opacity = 0;
+            }
         }
     }
 }

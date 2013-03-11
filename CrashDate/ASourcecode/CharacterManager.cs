@@ -16,6 +16,15 @@ namespace CrashDate
             characters = new List<Character>();
         }
 
+        public void Update()
+        {
+            foreach (Character cha in characters)
+            {
+                if (cha.active)
+                    cha.Update();
+            }
+        }
+
         public void LoadCharacters(ContentManager myContentManager)
         {
             // ############## ALL THE INGAME CHARACTERS ARE DEFINED HERE ################

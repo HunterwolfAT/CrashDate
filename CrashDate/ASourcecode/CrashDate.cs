@@ -106,6 +106,7 @@ namespace CrashDate
             // TODO: Add your update logic here
             scripth.Update();
             gui.Update();
+            charmanager.Update();
 
             base.Update(gameTime);
         }

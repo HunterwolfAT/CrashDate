@@ -93,6 +93,16 @@ namespace CrashDate
                         game.gui.SetBackground(game.Content, newbg);
                     }
                     #endregion
+                    #region Fade Background
+                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ FADE TO BACKGROUND
+                    // Fades the background image to the named sprite
+                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                    if (Script[cPointer].Substring(0, 6) == "bgfade")
+                    {
+                        String newbg = Script[cPointer].Substring(7, Script[cPointer].Length - 7);
+                        game.gui.FadeBackground(game.Content, newbg);
+                    }
+                    #endregion
                     #region Run Script
                     // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ RUN A SCRIPT
                     // Run another script
@@ -113,6 +123,18 @@ namespace CrashDate
                         String character = Script[cPointer].Substring(6, Script[cPointer].Length - 6);
                         activechar = game.charmanager.GetChar(character);
                         activechar.active = true;
+                    }
+                    #endregion
+                    #region Fade In Character
+                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ FADE IN CHARACTER
+                    // Sets a character active for the scene, making it appear
+                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                    if (Script[cPointer].Substring(0, 6) == "fichar")
+                    {
+                        String character = Script[cPointer].Substring(7, Script[cPointer].Length - 7);
+                        activechar = game.charmanager.GetChar(character);
+                        activechar.active = true;
+                        activechar.Fade(true);
                     }
                     #endregion
                     #region Focus Character

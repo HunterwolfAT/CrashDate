@@ -15,6 +15,10 @@ namespace CrashDate
 
         // Global Sprites
         Sprite background;
+        Sprite nextbackground;
+        int opacity = 255;
+        int fadestep = 10;
+        bool fadebackground = false;
 
         // Sprites for Events
         Sprite textbox;
@@ -31,6 +35,7 @@ namespace CrashDate
 
         public GUI(ContentManager myContentManager) {
             background = new Sprite();
+            nextbackground = new Sprite();
             //background.LoadContent(myContentManager, "Graphics\\527322");
 
             textbox = new Sprite();
@@ -43,6 +48,7 @@ namespace CrashDate
 
         public void Update()
         {
+            // Update the MSGBox
             if (CompleteMSG != DisplayMSG)
             {
                 MSGCounter += MSGSpeed;
@@ -54,6 +60,19 @@ namespace CrashDate
             }
             else
                 Idle = true;
+
+            // Fade to a new background
+            if (fadebackground)
+            {
+                opacity -= fadestep;
+                if (opacity <= 0)
+                {
+                    opacity = 0;
+                    background = nextbackground;
+                    nextbackground = null;
+                    fadebackground = false;
+                }
+            }
         }
 
         public void WriteMSG(String msg)
@@ -84,6 +103,11 @@ namespace CrashDate
         public void DrawBackground(SpriteBatch mySpriteBatch)
         {
             background.Draw(mySpriteBatch);
+            if (fadebackground)
+            {
+                nextbackground.Color = new Color(255 - opacity, 255 - opacity, 255 - opacity, 255 - opacity);
+                nextbackground.Draw(mySpriteBatch);
+            }
         }
 
         public void Draw(SpriteBatch mySpriteBatch) {
@@ -99,6 +123,13 @@ namespace CrashDate
         public void SetBackground(ContentManager myContentManager, String name)
         {
             background.LoadContent(myContentManager, "Graphics\\" + name);
+        }
+
+        public void FadeBackground(ContentManager myContentManager, String name)
+        {
+            nextbackground.LoadContent(myContentManager, "Graphics\\" + name);
+            fadebackground = true;
+            opacity = 255;
         }
     }
 }
