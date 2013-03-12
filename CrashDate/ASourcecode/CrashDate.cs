@@ -151,6 +151,16 @@ namespace CrashDate
                 gui.SetMSGSpeed(1f);
                 scripth.PushAccept();
             }
+
+            // UP and DOWN ARROWS - SELECTING STUFF!
+            if (newkeystate.IsKeyUp(Keys.Up) && oldkeystate.IsKeyDown(Keys.Up))
+            {
+                gui.SelectUp();
+            }
+            if (newkeystate.IsKeyUp(Keys.Down) && oldkeystate.IsKeyDown(Keys.Down))
+            {
+                gui.SelectDown();
+            }
             
             // CHANGE RESOLUTION
             if (newkeystate.IsKeyDown(Keys.F2) && oldkeystate.IsKeyUp(Keys.F2))

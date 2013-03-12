@@ -146,6 +146,12 @@ namespace CrashDate
                 foreach (String question in Questions)
                 {
                     choicebox.Position = new Vector2(960, 580 - (110 * questioncounter));
+
+                    if (questioncounter == selectedchoice)
+                        choicebox.Color = Color.Red;
+                    else
+                        choicebox.Color = Color.White;
+
                     choicebox.Draw(mySpriteBatch, textboxopac);
                     PrintText(mySpriteBatch, question, new Vector2(960 - (msgfont.MeasureString(question).X / 2), 550 - (110 * questioncounter)), Color.White, Color.Black);
                     questioncounter++;
@@ -194,12 +200,26 @@ namespace CrashDate
         public void ShowChoices()
         {
             showchoice = true;
+            selectedchoice = Questions.Count() - 1;
+            Questions.Reverse();
         }
 
         public void CleanUpChoices()
         {
             Questions.Clear();
             showchoice = false;
+        }
+
+        public void SelectDown()
+        {
+            if (selectedchoice > 0)
+                selectedchoice -= 1;
+        }
+
+        public void SelectUp()
+        {
+            if (selectedchoice <= Questions.Count() - 2)
+                selectedchoice += 1;
         }
     }
 }

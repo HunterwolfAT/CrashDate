@@ -3,6 +3,13 @@ s So, ich bin hier also... wo zum geier bin ich denn hier?\nHab ich wieder zuvie
 choice Geh auf sie zu.
 choice Sag weiter nichts.
 choice ask
+// Geh auf sie zu
+//choice case 1
+s bla
+// Sag weiter nichts
+choice case 2
+s blubb
+choice end
 s Ich, ähm, bin dann mal weg. Raus hier.
 bgfade schneelandschaft
 s Ah, viel besser.

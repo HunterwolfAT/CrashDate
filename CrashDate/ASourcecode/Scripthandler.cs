@@ -151,11 +151,16 @@ namespace CrashDate
                     // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     if (words[0] == "choice")
                     {
+                        // Display the choices
                         if (words[1] == "ask")
                         {
                             game.gui.ShowChoices();
                         }
-                        else
+                        //else if (words[1] == "case")    // The Player selected one choice, so jump to that line in the script
+                        //{
+                            
+                        //}
+                        else    // Set up the choices 
                         {
                             String question = "";
                             for (int x = 1; x < words.Count(); x++)
@@ -272,7 +277,7 @@ namespace CrashDate
         {
             if (runScript)
             {
-                if (game.gui.Idle && Script[cPointer - 1][0] == 's')
+                if (!game.gui.showchoice && game.gui.Idle && Script[cPointer - 1][0] == 's')
                 {
                     goToNextCommand = true;
                 }
