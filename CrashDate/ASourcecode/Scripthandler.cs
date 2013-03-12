@@ -155,6 +155,7 @@ namespace CrashDate
                         if (words[1] == "ask")
                         {
                             game.gui.ShowChoices();
+                            goToNextCommand = false;
                         }
                         //else if (words[1] == "case")    // The Player selected one choice, so jump to that line in the script
                         //{
@@ -280,6 +281,15 @@ namespace CrashDate
                 if (!game.gui.showchoice && game.gui.Idle && Script[cPointer - 1][0] == 's')
                 {
                     goToNextCommand = true;
+                }
+
+                if (Script[cPointer - 1].Length >= 6)
+                {
+                    if (Script[cPointer - 1].Substring(0, 6) == "choice" && game.gui.showchoice)
+                    {
+                        goToNextCommand = true;
+                        game.gui.CleanUpChoices();
+                    }
                 }
             }
         }

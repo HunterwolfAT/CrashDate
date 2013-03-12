@@ -36,7 +36,7 @@ namespace CrashDate
         Sprite choicebox;
         List<String> Questions;
         public Boolean showchoice = false;
-        int selectedchoice = 0;
+        public int selectedchoice = 0;
 
         // Menu Sprites
 
