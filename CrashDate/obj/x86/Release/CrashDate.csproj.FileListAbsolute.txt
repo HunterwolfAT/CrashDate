@@ -22,3 +22,4 @@ C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Cr
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\obj\x86\Release\CrashDate.csprojResolveAssemblyReference.cache
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\obj\x86\Release\CrashDate.exe.manifest
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\obj\x86\Release\CrashDate.application
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Graphics\choicebox.xnb

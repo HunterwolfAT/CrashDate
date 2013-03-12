@@ -1,5 +1,8 @@
 ﻿bgset twgok
 s So, ich bin hier also... wo zum geier bin ich denn hier?\nHab ich wieder zuviel gesoffen??
+choice Geh auf sie zu.
+choice Sag weiter nichts.
+choice ask
 s Ich, ähm, bin dann mal weg. Raus hier.
 bgfade schneelandschaft
 s Ah, viel besser.
@@ -20,6 +23,10 @@ fchar Testy
 body 1
 s ... ... ... ...
 s fchar p Oh, oh. Ich glaub das mag sie gar nicht.
+s Was soll ich am besten tun?
+choice Geh auf sie zu.
+choice Sag weiter nichts.
+choice ask
 fochar Testy
 s fchar p Dann halt nicht....
 s ENDE

@@ -145,6 +145,26 @@ namespace CrashDate
                         PlayScript(nextscript);
                     }
                     #endregion
+                    #region Present Choice
+                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ PRESENT A CHOICE
+                    // Let the Player decide a path
+                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                    if (words[0] == "choice")
+                    {
+                        if (words[1] == "ask")
+                        {
+                            game.gui.ShowChoices();
+                        }
+                        else
+                        {
+                            String question = "";
+                            for (int x = 1; x < words.Count(); x++)
+                                question += words[x] + " ";
+                            game.gui.AddQuestion(question);
+                        }
+
+                    }
+                    #endregion
                     // Characters Commands
                     #region Introduce Character
                     // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ INTRODUCE CHARACTER

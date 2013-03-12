@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CrashDate.exe" size="19456">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CrashDate.exe" size="20480">
       <assemblyIdentity name="CrashDate" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>hlnxhIqA740xvWsDaiktKwBoNoI=</dsig:DigestValue>
+        <dsig:DigestValue>Fm6L7K2VjLh2y38lWEEuDmrx81M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -156,6 +156,15 @@
       <dsig:DigestValue>vGNGMEH/z8gbmTIrsjDqE8Opoto=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\Graphics\choicebox.xnb" size="407139">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>GCyTNUfFoALG32zRAgP0ZUUQi08=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\Graphics\schneelandschaft.xnb" size="8294587">
     <hash>
       <dsig:Transforms>
@@ -192,13 +201,13 @@
       <dsig:DigestValue>NbNw8+y3MFhAQm240NWxf/S3MTY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Scripts\Test.cds" size="690">
+  <file name="Content\Scripts\Test.cds" size="847">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>atSb8CF92EyN9HpLHnmYjgmTEnk=</dsig:DigestValue>
+      <dsig:DigestValue>KbOMXdvQkJ7NFPzO8Q9LK2ZkBK4=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Scripts\Test2.cds" size="132">

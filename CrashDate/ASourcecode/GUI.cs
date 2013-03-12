@@ -32,6 +32,12 @@ namespace CrashDate
         float MSGSpeed = 1f;
         float MSGCounter = 0f;
 
+        // Choice Variables
+        Sprite choicebox;
+        List<String> Questions;
+        public Boolean showchoice = false;
+        int selectedchoice = 0;
+
         // Menu Sprites
 
         public GUI(ContentManager myContentManager) {
@@ -41,10 +47,14 @@ namespace CrashDate
 
             textbox = new Sprite();
             textbox.LoadContent(myContentManager, "Graphics\\textbox");
-            textbox.Position = new Microsoft.Xna.Framework.Vector2(960, 850);
+            textbox.Position = new Vector2(960, 850);
+
+            choicebox = new Sprite();
+            choicebox.LoadContent(myContentManager, "Graphics\\choicebox");
 
             msgfont = myContentManager.Load<SpriteFont>("Fonts\\MSGFont");
-            
+
+            Questions = new List<string>();
         }
 
         public void Update()
@@ -111,6 +121,38 @@ namespace CrashDate
 
         }
 
+        public void PrintText(SpriteBatch mySpriteBatch, String text, Vector2 position, Color color, Color bordercolor)
+        {
+            float scale = 1f;   // The thickness of the font-border
+
+            bordercolor = Color.Black;
+
+            // Draw the border
+            mySpriteBatch.DrawString(msgfont, text, position + new Vector2(1 * scale, 1 * scale), bordercolor);
+            mySpriteBatch.DrawString(msgfont, text, position + new Vector2(-1 * scale, -1 * scale), bordercolor);
+            mySpriteBatch.DrawString(msgfont, text, position + new Vector2(-1 * scale, 1 * scale), bordercolor);
+            mySpriteBatch.DrawString(msgfont, text, position + new Vector2(1 * scale, -1 * scale), bordercolor);
+
+            // Draw the actual message
+            mySpriteBatch.DrawString(msgfont, text, position, color);
+
+        }
+
+        private void DrawChoices(SpriteBatch mySpriteBatch)
+        {
+            if (showchoice)
+            {
+                int questioncounter = 0;
+                foreach (String question in Questions)
+                {
+                    choicebox.Position = new Vector2(960, 580 - (110 * questioncounter));
+                    choicebox.Draw(mySpriteBatch, textboxopac);
+                    PrintText(mySpriteBatch, question, new Vector2(960 - (msgfont.MeasureString(question).X / 2), 550 - (110 * questioncounter)), Color.White, Color.Black);
+                    questioncounter++;
+                }
+            }
+        }
+
         public void DrawBackground(SpriteBatch mySpriteBatch)
         {
             background.Draw(mySpriteBatch);
@@ -124,6 +166,7 @@ namespace CrashDate
         public void Draw(SpriteBatch mySpriteBatch) {
             textbox.Draw(mySpriteBatch, textboxopac);
             PrintMSGText(mySpriteBatch, new Vector2(60, 720), Color.White, Color.Black, Color.DarkBlue);
+            DrawChoices(mySpriteBatch);
         }
 
         public void SetMSGSpeed(float speed)
@@ -141,6 +184,22 @@ namespace CrashDate
             nextbackground.LoadContent(myContentManager, "Graphics\\" + name);
             fadebackground = true;
             opacity = 255;
+        }
+
+        public void AddQuestion(String question)
+        {
+            Questions.Add(question);
+        }
+
+        public void ShowChoices()
+        {
+            showchoice = true;
+        }
+
+        public void CleanUpChoices()
+        {
+            Questions.Clear();
+            showchoice = false;
         }
     }
 }
