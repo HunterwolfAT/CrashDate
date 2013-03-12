@@ -91,7 +91,24 @@ namespace CrashDate
                     if (words[0] == "s")
                     {
                         String msg = "";
-                        for (int x = 1; x < words.Count(); x++)
+                        int startingpoint = 1;
+
+                        // if necessary, change active character first
+                        if (words[1] == "fchar")
+                        {
+                            if (words[2] == "player" || words[2] == "p")
+                            {
+                                activechar = game.charmanager.GetChar("Player");
+                            }
+                            else
+                            {
+                                String character = words[2];
+                                activechar = game.charmanager.GetChar(character);
+                            }
+                            startingpoint = 3;
+                        }
+
+                        for (int x = startingpoint; x < words.Count(); x++)
                             msg += words[x] + " ";
                         msg = msg.Replace("\\n", System.Environment.NewLine);
                         game.gui.WriteMSG(activechar.name, msg);

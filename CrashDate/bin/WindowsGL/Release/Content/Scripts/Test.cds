@@ -6,26 +6,21 @@ s Ah, viel besser.
 s Oh, das ist ja Jemand!
 fichar Testy
 body 2
-s Hallo!
+s fchar p Hallo!
+fchar Testy
 body 0
-fchar Testy
-s ...
-fchar p
-s Kannst du nicht sprechen?\nDas ist okay. Ich spreche auch nicht so gern.\nAusser halt jetzt grade.
+s fchar Testy ...
+s fchar p Kannst du nicht sprechen?\nDas ist okay. Ich spreche auch nicht so gern.\nAusser halt jetzt grade.
 s Wir können auch beide zusammen nicht sprechen! Pass auf!
-fchar Testy
-s ...
+s fchar Testy ...
 body 3
 s ... ...
-fchar p
-s ... ... ...
-body 1
+s fchar p ... ... ...
 fchar Testy
+body 1
 s ... ... ... ...
-fchar p
-s Oh, oh. Ich glaub das mag sie gar nicht.
+s fchar p Oh, oh. Ich glaub das mag sie gar nicht.
 fochar Testy
-fchar p
-s Dann halt nicht....
+s fchar p Dann halt nicht....
 s ENDE
 run Test2
