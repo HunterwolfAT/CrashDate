@@ -27,6 +27,7 @@ namespace CrashDate
         // Textbox Variables
         String CompleteMSG = "";
         String DisplayMSG = "";
+        String SpeakingChar = "";
         public Boolean Idle = true;
         float MSGSpeed = 1f;
         float MSGCounter = 0f;
@@ -75,19 +76,29 @@ namespace CrashDate
             }
         }
 
-        public void WriteMSG(String msg)
+        public void WriteMSG(String name, String msg)
         {
             CompleteMSG = msg;
             DisplayMSG = "";
+            SpeakingChar = name;
             Idle = false;
             MSGCounter = 0f;
         }
 
-        public void PrintMSGText(SpriteBatch mySpriteBatch, Vector2 position, Color color, Color bordercolor)
+        public void PrintMSGText(SpriteBatch mySpriteBatch, Vector2 position, Color color, Color bordercolor, Color namecolor)
         {
             float scale = 1f;   // The thickness of the font-border
 
             bordercolor = Color.Black;
+
+            // Draw the border for the Name
+            mySpriteBatch.DrawString(msgfont, SpeakingChar, new Vector2(position.X, position.Y - 50) + new Vector2(1 * scale, 1 * scale), bordercolor);
+            mySpriteBatch.DrawString(msgfont, SpeakingChar, new Vector2(position.X, position.Y - 50) + new Vector2(-1 * scale, -1 * scale), bordercolor);
+            mySpriteBatch.DrawString(msgfont, SpeakingChar, new Vector2(position.X, position.Y - 50) + new Vector2(-1 * scale, 1 * scale), bordercolor);
+            mySpriteBatch.DrawString(msgfont, SpeakingChar, new Vector2(position.X, position.Y - 50) + new Vector2(1 * scale, -1 * scale), bordercolor);
+
+            // Draw the Character Name
+            mySpriteBatch.DrawString(msgfont, SpeakingChar, new Vector2(position.X, position.Y - 50), namecolor);
 
             // Draw the border
             mySpriteBatch.DrawString(msgfont, DisplayMSG, position + new Vector2(1 * scale, 1 * scale), bordercolor);
@@ -112,7 +123,7 @@ namespace CrashDate
 
         public void Draw(SpriteBatch mySpriteBatch) {
             textbox.Draw(mySpriteBatch, textboxopac);
-            PrintMSGText(mySpriteBatch, new Vector2(60, 700), Color.White, Color.Black);
+            PrintMSGText(mySpriteBatch, new Vector2(60, 720), Color.White, Color.Black, Color.DarkBlue);
         }
 
         public void SetMSGSpeed(float speed)

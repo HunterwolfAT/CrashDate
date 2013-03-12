@@ -29,9 +29,14 @@ namespace CrashDate
         {
             // ############## ALL THE INGAME CHARACTERS ARE DEFINED HERE ################
 
-            // Testy
+            // Dummy Player Char
             List<String> body = new List<String>();
             List<String> face = new List<String>();
+            AddCharacter("Player", body, face, myContentManager);
+
+            // Testy
+            body.Clear();
+            face.Clear();
             body.Add("testy_normal");
             body.Add("testy_angry");
             body.Add("testy_happy");
