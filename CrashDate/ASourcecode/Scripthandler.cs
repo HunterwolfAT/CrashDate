@@ -17,6 +17,8 @@ namespace CrashDate
         bool goToNextCommand = false;
         bool runScript = false;
 
+        int selectedchoice = -1;
+
         Character activechar = null;
 
         public Scripthandler(Game1 thisgame)
@@ -157,10 +159,23 @@ namespace CrashDate
                             game.gui.ShowChoices();
                             goToNextCommand = false;
                         }
-                        //else if (words[1] == "case")    // The Player selected one choice, so jump to that line in the script
-                        //{
-                            
-                        //}
+                        else if (words[1] == "case")    // The Player selected one choice, so jump to that line in the script
+                        {
+                            if (words[2] != "end")
+                            {
+                                int answer = -1;
+                                int.TryParse(words[2], out answer);
+                                if (answer != selectedchoice)
+                                {
+                                    JumpToNext("choice case");
+                                }
+                            }
+                            else
+                            {
+                                // EDIT THIS HERE AND ADD A IF STACK OR SOMETHING SO YOU CAN HAVE NESTED CHOICE CASE BRANCHES THATS COOL YOU SHOULD DO THAT
+                                selectedchoice = -1;
+                            }
+                        }
                         else    // Set up the choices 
                         {
                             String question = "";
@@ -274,7 +289,19 @@ namespace CrashDate
             Console.WriteLine("SCRIPT ERROR \"" + command + "\" in Line " + (cPointer + 1).ToString() + ": " + msg );
         }
 
-        public void PushAccept()
+        private void JumpToNext(String parse)
+        {
+            for (int x = cPointer + 1; x < Script.Count(); x++)
+            {
+                if (Script[x].Contains(parse))
+                {
+                    cPointer = x;
+                    break;
+                }
+            }
+        }
+
+        public void PushAccept(int choice)
         {
             if (runScript)
             {
@@ -287,6 +314,8 @@ namespace CrashDate
                 {
                     if (Script[cPointer - 1].Substring(0, 6) == "choice" && game.gui.showchoice)
                     {
+                        selectedchoice = choice;
+                        Console.WriteLine(selectedchoice);
                         goToNextCommand = true;
                         game.gui.CleanUpChoices();
                     }

@@ -26,6 +26,8 @@ namespace CrashDate
         float HEIGHT = 1080f;                  // The RENDERED Resolution - This is the displayed resolution (changable)
         float WIDTH = 1920f;
 
+        Boolean FULLSCREEN = false;
+
         // ################# OBJECT DECLARATION #################
         public GUI gui;
         Scripthandler scripth;
@@ -50,7 +52,7 @@ namespace CrashDate
             Content.RootDirectory = "Content";      // Defines where every game asset can be found
 
             Resolution.SetVirtualResolution((int)WIDTH, (int)HEIGHT);
-            Resolution.SetResolution(VWIDTH, VHEIGHT, true);
+            Resolution.SetResolution(VWIDTH, VHEIGHT, FULLSCREEN);
         }
 
         /// <summary>
@@ -149,7 +151,7 @@ namespace CrashDate
             if (newkeystate.IsKeyUp(Keys.Enter) && oldkeystate.IsKeyDown(Keys.Enter))
             {
                 gui.SetMSGSpeed(1f);
-                scripth.PushAccept();
+                scripth.PushAccept(gui.selectedchoice);
             }
 
             // UP and DOWN ARROWS - SELECTING STUFF!
