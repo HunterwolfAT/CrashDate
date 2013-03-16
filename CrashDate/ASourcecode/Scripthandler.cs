@@ -79,6 +79,9 @@ namespace CrashDate
                 ReloadScript();
                 if (Script[cPointer].Length > 0)        // Line must not be empty to look for a command
                 {
+                    // Remove empty spaces that come before the command
+                    Script[cPointer] = Script[cPointer].Trim();
+
                     String[] words = Script[cPointer].Split(' ');
 
                     if (activechar == null)
@@ -172,7 +175,6 @@ namespace CrashDate
                             }
                             else
                             {
-                                // EDIT THIS HERE AND ADD A IF STACK OR SOMETHING SO YOU CAN HAVE NESTED CHOICE CASE BRANCHES THATS COOL YOU SHOULD DO THAT
                                 selectedchoice = -1;
                             }
                         }
@@ -291,9 +293,23 @@ namespace CrashDate
 
         private void JumpToNext(String parse)
         {
+            int choicestack = 0;
+            
             for (int x = cPointer + 1; x < Script.Count(); x++)
             {
-                if (Script[x].Contains(parse))
+                if (Script[cPointer - 1].Substring(0, 6) == "choice")
+                {
+                    if (Script[x].Contains("choice ask"))
+                    {
+                        choicestack++;
+                    }
+                    else if (Script[x].Contains("choice case end"))
+                    {
+                        choicestack--;
+                    }
+                }
+
+                if (Script[x].Contains(parse) && choicestack == 0)
                 {
                     cPointer = x;
                     break;

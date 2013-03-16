@@ -5,15 +5,15 @@ choice Sag weiter nichts.
 choice ask
 // Geh auf sie zu
 choice case 1
-s Okay, ich werd mal versuchen sie anzusprechen.
-s Hallo? Mädchen? Was... bist du?
-s ...
-s Keine Antwort.
-s Hey, Moment mal! Das ist ja nur ein Hintergrund! Pah!
+	s Okay, ich werd mal versuchen sie anzusprechen.
+	s Hallo? Mädchen? Was... bist du?
+	s ...
+	s Keine Antwort.
+	s Hey, Moment mal! Das ist ja nur ein Hintergrund! Pah!
 // Sag weiter nichts
 choice case 2
-s Ja, ich denke es ist besser wenn ich mich aus dem Staub mache.
-s Nicht noch dass sie mir hier was vorsingt oder so. *Schauder*
+	s Ja, ich denke es ist besser wenn ich mich aus dem Staub mache.
+	s Nicht noch dass sie mir hier was vorsingt oder so. *Schauder*
 choice case end
 s Ich, ähm, bin dann mal weg. Raus hier.
 bgfade schneelandschaft
