@@ -201,7 +201,7 @@ namespace CrashDate
         {
             showchoice = true;
             selectedchoice = Questions.Count() - 1;
-            Questions.Reverse();
+            //Questions.Reverse();
         }
 
         public void CleanUpChoices()

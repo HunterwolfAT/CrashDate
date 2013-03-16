@@ -314,7 +314,7 @@ namespace CrashDate
                 {
                     if (Script[cPointer - 1].Substring(0, 6) == "choice" && game.gui.showchoice)
                     {
-                        selectedchoice = choice;
+                        selectedchoice = choice + 1;        // Lets not make it start at 0
                         Console.WriteLine(selectedchoice);
                         goToNextCommand = true;
                         game.gui.CleanUpChoices();
