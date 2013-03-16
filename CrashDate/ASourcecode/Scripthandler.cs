@@ -297,17 +297,20 @@ namespace CrashDate
             
             for (int x = cPointer + 1; x < Script.Count(); x++)
             {
-                if (Script[cPointer - 1].Substring(0, 6) == "choice")
-                {
+                Console.WriteLine(Script[x]);
+                //if (Script[cPointer - 1].Substring(0, 6) == "choice")
+                //{
                     if (Script[x].Contains("choice ask"))
                     {
                         choicestack++;
+                        Console.WriteLine("Found a choise ask! Increasing choicestack!");
                     }
-                    else if (Script[x].Contains("choice case end"))
+                    else if (Script[x].Contains("choice case end") && choicestack > 0)
                     {
                         choicestack--;
+                        Console.WriteLine("Found a choise end! Decreasing choicestack!");
                     }
-                }
+                //}
 
                 if (Script[x].Contains(parse) && choicestack == 0)
                 {

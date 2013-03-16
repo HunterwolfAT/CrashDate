@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>YE6KsiRd+/q7Fu49BaVwTrG/Bac=</dsig:DigestValue>
+        <dsig:DigestValue>da4+tk2NO8DcF64JvMZzEaJSwCw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -201,13 +201,13 @@
       <dsig:DigestValue>NbNw8+y3MFhAQm240NWxf/S3MTY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Scripts\Test.cds" size="1241">
+  <file name="Content\Scripts\Test.cds" size="1589">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>Kd9JfeAA9OMFv9tI4ZvIoV/nxKA=</dsig:DigestValue>
+      <dsig:DigestValue>rZKPpWtXyZjHffSKd1q6BDf3QNY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Scripts\Test2.cds" size="132">
