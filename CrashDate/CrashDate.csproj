@@ -69,6 +69,7 @@
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ASourcecode\Audio.cs" />
     <Compile Include="ASourcecode\Character.cs" />
     <Compile Include="ASourcecode\CharacterManager.cs" />
     <Compile Include="ASourcecode\CrashDate.cs" />
