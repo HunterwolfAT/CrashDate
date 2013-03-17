@@ -3,7 +3,7 @@ fichar Testy
 body 2
 s Heute ist ein schöner Tag!
 bgset twgok
-song Ohne Titel
+//song Ohne Titel
 	s So, ich bin hier also... wo zum geier bin ich denn hier?\nHab ich wieder zuviel gesoffen??
 choice Geh auf sie zu.
 choice Sag weiter nichts.

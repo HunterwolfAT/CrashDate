@@ -187,6 +187,7 @@ namespace CrashDate
 
         public void FadeBackground(ContentManager myContentManager, String name)
         {
+            nextbackground = new Sprite();
             nextbackground.LoadContent(myContentManager, "Graphics\\" + name);
             fadebackground = true;
             opacity = 255;

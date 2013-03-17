@@ -55,6 +55,7 @@ namespace CrashDate
                 {
                     opacity = 255;
                     fading = 0;
+                    active = false;
                 }
                 if (opacity <= 0)
                 {
