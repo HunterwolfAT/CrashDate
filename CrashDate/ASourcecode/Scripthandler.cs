@@ -99,7 +99,7 @@ namespace CrashDate
                         int startingpoint = 1;
 
                         // if necessary, change active character first
-                        if (words[1] == "fchar")
+                        if (words[1] == "fchar" || words[1] == "focuschar" || words[1] == "fc")
                         {
                             if (words[2] == "player" || words[2] == "p")
                             {
@@ -118,26 +118,6 @@ namespace CrashDate
                         msg = msg.Replace("\\n", System.Environment.NewLine);
                         game.gui.WriteMSG(activechar.name, msg);
                         goToNextCommand = false;
-                    }
-                    #endregion
-                    #region Set Background
-                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ SET THE BACKGROUND
-                    // Changes the background image to the named sprite
-                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    if (words[0] == "bgset")
-                    {
-                        String newbg = words[1];
-                        game.gui.SetBackground(game.Content, newbg);
-                    }
-                    #endregion
-                    #region Fade Background
-                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ FADE TO BACKGROUND
-                    // Fades the background image to the named sprite
-                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    if (words[0] == "bgfade")
-                    {
-                        String newbg = words[1];
-                        game.gui.FadeBackground(game.Content, newbg);
                     }
                     #endregion
                     #region Run Script
@@ -188,12 +168,32 @@ namespace CrashDate
 
                     }
                     #endregion
+                    #region Set Background
+                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ SET THE BACKGROUND
+                    // Changes the background image to the named sprite
+                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                    if (words[0] == "bgset" || words[0] == "backgroundset")
+                    {
+                        String newbg = words[1];
+                        game.gui.SetBackground(game.Content, newbg);
+                    }
+                    #endregion
+                    #region Fade Background
+                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ FADE TO BACKGROUND
+                    // Fades the background image to the named sprite
+                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                    if (words[0] == "bgfade" || words[0] == "backgroundfade")
+                    {
+                        String newbg = words[1];
+                        game.gui.FadeBackground(game.Content, newbg);
+                    }
+                    #endregion
                     // Characters Commands
                     #region Introduce Character
                     // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ INTRODUCE CHARACTER
                     // Sets a character active for the scene, making it appear
                     // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    if (words[0] == "ichar")
+                    if (words[0] == "ichar" || words[0] == "introducechar")
                     {
                         String character = words[1];
                         activechar = game.charmanager.GetChar(character);
@@ -204,7 +204,7 @@ namespace CrashDate
                     // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ FADE IN CHARACTER
                     // Sets a character active for the scene, making it appear
                     // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    if (words[0] == "fichar")
+                    if (words[0] == "fichar" || words[0] == "fadeinchar")
                     {
                         String character = words[1];
                         activechar = game.charmanager.GetChar(character);
@@ -227,7 +227,7 @@ namespace CrashDate
                     // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ FOCUS ON CHARACTER
                     // Makes a character "active" for the script, focussing commands on it
                     // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    if (words[0] == "fchar")
+                    if (words[0] == "fchar" || words[0] == "focuschar" || words[0] == "fc")
                     {
                         if (words[1] == "player" || words[1] == "p")
                         {

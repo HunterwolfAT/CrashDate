@@ -29,11 +29,14 @@ namespace CrashDate
         Boolean FULLSCREEN = false;
 
         // ################# OBJECT DECLARATION #################
+        MainMenu menu;
         public GUI gui;
         Scripthandler scripth;
         public CharacterManager charmanager;
 
         // ################## GAME VARIABLES ####################
+        // Game State
+        String GameState;        
         // Control variables
         KeyboardState newkeystate;  // Saves the current state of the keyboard
         KeyboardState oldkeystate;  // Saves the state of the keyboard of the last tick
@@ -65,7 +68,10 @@ namespace CrashDate
         {
             // TODO: Add your initialization logic here
             gui = new GUI(this.Content);
+            menu = new MainMenu(this.Content);
             //gui.WriteMSG("Es ist so ein schöner Tag!\nKomm Senpai, lass uns Schlittschulaufen gehen! Es sieht so herrlich aus!");
+
+            GameState = "Game";
 
             scripth = new Scripthandler(this);
             scripth.PlayScript("Test");
@@ -124,12 +130,19 @@ namespace CrashDate
 
             // TODO: Add your drawing code here
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearWrap, DepthStencilState.None, RasterizerState.CullNone, null, Resolution.getTransformationMatrix());
-            
-            gui.DrawBackground(spriteBatch);
 
-            charmanager.Draw(spriteBatch);
-            
-            gui.Draw(spriteBatch);
+            if (GameState == "Menu")
+            {
+                menu.Draw(spriteBatch);
+            }
+            else if (GameState == "Game")
+            {
+                gui.DrawBackground(spriteBatch);
+
+                charmanager.Draw(spriteBatch);
+
+                gui.Draw(spriteBatch);
+            }
 
             spriteBatch.End();
             base.Draw(gameTime);
@@ -150,18 +163,39 @@ namespace CrashDate
             }
             if (newkeystate.IsKeyUp(Keys.Enter) && oldkeystate.IsKeyDown(Keys.Enter))
             {
-                gui.SetMSGSpeed(1f);
-                scripth.PushAccept(gui.selectedchoice);
+                if (GameState == "Menu")
+                {
+                    menu.Accept();
+                }
+                else if (GameState == "Game")
+                {
+                    gui.SetMSGSpeed(1f);
+                    scripth.PushAccept(gui.selectedchoice);
+                }
             }
 
             // UP and DOWN ARROWS - SELECTING STUFF!
             if (newkeystate.IsKeyUp(Keys.Up) && oldkeystate.IsKeyDown(Keys.Up))
             {
-                gui.SelectUp();
+                if (GameState == "Menu")
+                {
+                    menu.SelectUp();
+                }
+                else if (GameState == "Game")
+                {
+                    gui.SelectUp();
+                }
             }
             if (newkeystate.IsKeyUp(Keys.Down) && oldkeystate.IsKeyDown(Keys.Down))
             {
-                gui.SelectDown();
+                if (GameState == "Menu")
+                {
+                    menu.SelectDown();
+                }
+                else if (GameState == "Game")
+                {
+                    gui.SelectDown();
+                }
             }
             
             // CHANGE RESOLUTION
