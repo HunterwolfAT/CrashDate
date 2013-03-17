@@ -223,7 +223,17 @@ namespace CrashDate
                     // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     if (words[0] == "fichar" || words[0] == "fadeinchar")
                     {
-                        String character = words[1];
+                        String character;
+
+                        // if necessary, change active character first
+                        if (words[1] == "fchar" || words[1] == "focuschar" || words[1] == "fc")
+                        {
+                            character = words[2];
+                        }
+                        else
+                        {
+                            character = words[1];   
+                        }
                         activechar = game.charmanager.GetChar(character);
                         activechar.active = true;
                         activechar.Fade(true);
@@ -235,7 +245,18 @@ namespace CrashDate
                     // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     if (words[0] == "fochar")
                     {
-                        String character = words[1];
+                        String character;
+
+                        // if necessary, change active character first
+                        if (words[1] == "fchar" || words[1] == "focuschar" || words[1] == "fc")
+                        {
+                            character = words[2];
+                        }
+                        else
+                        {
+                            character = words[1];
+                        }
+
                         activechar = game.charmanager.GetChar(character);
                         activechar.Fade(false);
                     }

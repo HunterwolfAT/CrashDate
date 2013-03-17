@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>covYcPFdmcoYLzctMB+cEo7jECk=</dsig:DigestValue>
+        <dsig:DigestValue>ufMA/wwE/UaoMWfblCCjmr4ZECs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -109,51 +109,6 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>8yP+zfar2u3LXqRPyLOnItJkDqg=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\Audio\Songs\banana.wma" size="7324443">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>lWqM9bIFnu8XJGte1oiSFIi5spM=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\Audio\Songs\banana.xnb" size="166">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>v9ksIt0XEvhgXnFXpwdDQMsI6MU=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\Audio\Songs\Cave Story Theme Metalized.wma" size="3333635">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>2DGOSUmKmbWgbee2yqfbQQORbdo=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\Audio\Songs\Cave Story Theme Metalized.xnb" size="144">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>geamlJ01OBQ9rDk0SXm/DMBNrHA=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\Audio\Songs\Ohne Titel.wav" size="7331672">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>cqyXrm1N1bfnd0tuFVpOhJXIO6U=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Fonts\MSGFont.xnb" size="67056">
@@ -246,13 +201,13 @@
       <dsig:DigestValue>NbNw8+y3MFhAQm240NWxf/S3MTY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Scripts\Test.cds" size="1606">
+  <file name="Content\Scripts\Test.cds" size="1684">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>ycZ47QkHkogbziaGu0q/Twjw1QE=</dsig:DigestValue>
+      <dsig:DigestValue>nRnesEmY6ldHOm2tlLBFYLaZtbE=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Scripts\Test2.cds" size="132">
