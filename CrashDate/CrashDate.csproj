@@ -101,6 +101,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cds.ico" />
+    <Content Include="Content\Audio\Songs\banana.wma">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Audio\Songs\Cave Story Theme Metalized.wma">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Audio\Songs\Ohne Titel.wav" />
     <Content Include="Icon.ico" />
     <Content Include="SDL.dll" />
   </ItemGroup>
@@ -109,9 +116,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\Sound\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Content\Graphics\textbox.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -174,6 +179,13 @@
     <Content Include="Content\Graphics\choicebox.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Audio\Songs\banana.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Audio\Songs\Cave Story Theme Metalized.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Content\Audio\Songs\Ohne Titel.xnb" />
     <None Include="CrashDate_TemporaryKey.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

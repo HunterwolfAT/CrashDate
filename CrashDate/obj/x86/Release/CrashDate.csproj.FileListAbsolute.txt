@@ -23,3 +23,7 @@ C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\obj\x86\Release\CrashDat
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\obj\x86\Release\CrashDate.exe.manifest
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\obj\x86\Release\CrashDate.application
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Graphics\choicebox.xnb
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Audio\Songs\banana.wma
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Audio\Songs\banana.xnb
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Audio\Songs\Cave Story Theme Metalized.wma
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Audio\Songs\Cave Story Theme Metalized.xnb

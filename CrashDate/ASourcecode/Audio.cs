@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CrashDate.ASourcecode
+namespace CrashDate
 {
-    class Audio
+    public class Audio
     {
         public Boolean mute = false;
         Song FirstSong;

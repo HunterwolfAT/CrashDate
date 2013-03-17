@@ -188,6 +188,23 @@ namespace CrashDate
                         game.gui.FadeBackground(game.Content, newbg);
                     }
                     #endregion
+                    // Audio Commands
+                    #region Play Song
+                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ RUN A SCRIPT
+                    // Play a Backgroundsong
+                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                    if (words[0] == "song")
+                    {
+                        String songname = "";
+                        for (int x = 1; x < words.Count(); x++)
+                        {
+                            songname += words[x];
+                            if (x < words.Count() - 1)
+                                songname += " ";
+                        }
+                        game.audio.PlaySong(songname);
+                    }
+                    #endregion
                     // Characters Commands
                     #region Introduce Character
                     // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ INTRODUCE CHARACTER

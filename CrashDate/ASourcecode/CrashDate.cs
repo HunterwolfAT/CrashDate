@@ -30,6 +30,7 @@ namespace CrashDate
 
         // ################# OBJECT DECLARATION #################
         MainMenu menu;
+        public Audio audio;
         public GUI gui;
         Scripthandler scripth;
         public CharacterManager charmanager;
@@ -69,7 +70,7 @@ namespace CrashDate
             // TODO: Add your initialization logic here
             gui = new GUI(this.Content);
             menu = new MainMenu(this.Content);
-            //gui.WriteMSG("Es ist so ein schöner Tag!\nKomm Senpai, lass uns Schlittschulaufen gehen! Es sieht so herrlich aus!");
+            audio = new Audio(this.Content);
 
             GameState = "Game";
 
