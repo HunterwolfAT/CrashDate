@@ -14,6 +14,9 @@ namespace CrashDate
         Song FirstSong;
         Song SecondSong;
 
+        SoundEffect Speechfile;
+        SoundEffect SFX;
+
         ContentManager myContentManager;
 
         public Audio(ContentManager contentman)
@@ -35,6 +38,12 @@ namespace CrashDate
                 FirstSong = null;
                 MediaPlayer.Play(SecondSong);
             }
+        }
+
+        public void PlaySFX(String sfx, ContentManager cm)
+        {
+            SFX = cm.Load<SoundEffect>("Audio\\" + sfx);
+            SFX.Play();
         }
     }
 }

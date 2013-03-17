@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CrashDate.exe" size="23040">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CrashDate.exe" size="23552">
       <assemblyIdentity name="CrashDate" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>vn1FQ8cmP7k4TMHfDTXzQvgGJn0=</dsig:DigestValue>
+        <dsig:DigestValue>9m5aEVQcqAU2/fYLR4rhhG3ekhY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -109,6 +109,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>8yP+zfar2u3LXqRPyLOnItJkDqg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Audio\sfx.xnb" size="76981">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>8TlvLcP4NZZdIF2n/+4yotcyUXo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Audio\speech.xnb" size="570273">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>2KcCyFY2PbqNNiiC2xNEE5mwTPk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Fonts\MSGFont.xnb" size="67056">
@@ -201,13 +219,13 @@
       <dsig:DigestValue>NbNw8+y3MFhAQm240NWxf/S3MTY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Scripts\Test.cds" size="1686">
+  <file name="Content\Scripts\Test.cds" size="1698">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>nm4+R0EZSPEZqk6dUzBYWI5MJqc=</dsig:DigestValue>
+      <dsig:DigestValue>F2F/M6BBDaEMaFL5R6r65C5Y0JU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Scripts\Test2.cds" size="132">

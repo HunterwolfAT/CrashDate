@@ -1,6 +1,7 @@
 ﻿bgfade schneelandschaft
 fichar Testy
 body 2
+sfx speech
 s Heute ist ein schöner Tag!
 bgset twgok
 //song Ohne Titel

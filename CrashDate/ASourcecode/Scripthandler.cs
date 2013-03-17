@@ -190,7 +190,7 @@ namespace CrashDate
                     #endregion
                     // Audio Commands
                     #region Play Song
-                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ RUN A SCRIPT
+                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ PLAY A BACKGROUNDSONG
                     // Play a Backgroundsong
                     // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     if (words[0] == "song")
@@ -203,6 +203,22 @@ namespace CrashDate
                                 songname += " ";
                         }
                         game.audio.PlaySong(songname);
+                    }
+                    #endregion
+                    #region Play SFX
+                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ PLAY A SOUNDEFFECT
+                    // Play a Soundeffect
+                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                    if (words[0] == "sfx")
+                    {
+                        String sfxname = "";
+                        for (int x = 1; x < words.Count(); x++)
+                        {
+                            sfxname += words[x];
+                            if (x < words.Count() - 1)
+                                sfxname += " ";
+                        }
+                        game.audio.PlaySFX(sfxname, game.Content);
                     }
                     #endregion
                     // Characters Commands
