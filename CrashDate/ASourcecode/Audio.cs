@@ -11,6 +11,8 @@ namespace CrashDate
     public class Audio
     {
         public Boolean mute = false;
+        public float volume = 1.0f;
+
         Song FirstSong;
         Song SecondSong;
 
@@ -43,7 +45,7 @@ namespace CrashDate
         public void PlaySFX(String sfx, ContentManager cm)
         {
             SFX = cm.Load<SoundEffect>("Audio\\" + sfx);
-            SFX.Play();
+            SFX.Play(volume, 0f, 0f);
         }
     }
 }

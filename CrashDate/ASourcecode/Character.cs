@@ -20,6 +20,8 @@ namespace CrashDate
         int actbody;
         int actface;
 
+        int sympathy = 0;
+
         public Character(String Name, List<String> bodiepics, List<String> facepics, ContentManager myContentManager) {
             name = Name;
             actbody = 0;
@@ -101,5 +103,11 @@ namespace CrashDate
                 opacity = 0;
             }
         }
+
+        public void IncreaseSympathy(int value) {sympathy += value;}
+
+        public void DecreaseSympathy(int value) {sympathy -= value;}
+
+        public int GetSympathy()    {return sympathy;}
     }
 }

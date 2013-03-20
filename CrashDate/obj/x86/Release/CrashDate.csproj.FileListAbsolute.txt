@@ -25,3 +25,4 @@ C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\obj\x86\Release\CrashDat
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Graphics\choicebox.xnb
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Audio\sfx.xnb
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Audio\speech.xnb
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Audio\bum.xnb

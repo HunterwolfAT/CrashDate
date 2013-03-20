@@ -1,14 +1,19 @@
 ﻿bgfade schneelandschaft
-fichar Testy
 body 2
-sfx speech
+sfx bum
 s Heute ist ein schöner Tag!
+fchar Testy
+sympathy inc 5
+sfx speech
 bgset twgok
 //song Ohne Titel
 	s So, ich bin hier also... wo zum geier bin ich denn hier?\nHab ich wieder zuviel gesoffen??
+	sympathy inc 5
 choice Geh auf sie zu.
 choice Sag weiter nichts.
 choice ask
+sympathy dec 2
+sfx bum
 // Geh auf sie zu
 	choice case 1
 		s Okay, ich werd mal versuchen sie anzusprechen.

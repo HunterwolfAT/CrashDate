@@ -328,6 +328,36 @@ namespace CrashDate
                             Error("face", "I don't know what character you mean!");
                     }
                     #endregion
+                    #region Change Sympathy
+                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ CHANGE SYMPATHY
+                    // Adds to or takes from the "I like you"-parameter of that character
+                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                    if (words[0] == "sympathy")
+                    {
+                        String option = words[1];
+                        String valuestr = words[2];
+                        if (activechar != null)
+                        {
+                            int valueint;
+                            int.TryParse(valuestr, out valueint);
+                            if (option == "inc")
+                            {
+                                activechar.IncreaseSympathy(valueint);
+                            }
+                            else if (option == "dec")
+                            {
+                                activechar.DecreaseSympathy(valueint);
+                            }
+                            else
+                            {
+                                Error("sympathy", "The first parameter should either be 'inc' or 'dec'!");
+                            }
+                            Console.WriteLine(activechar.GetSympathy());
+                        }
+                        else
+                            Error("sympathy", "I don't know what character you mean!");
+                    }
+                    #endregion
                 }
 
                 if (cPointer < Script.Count - 1)
