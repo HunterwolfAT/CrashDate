@@ -188,6 +188,65 @@ namespace CrashDate
                         game.gui.FadeBackground(game.Content, newbg);
                     }
                     #endregion
+                    #region Check Sympathy
+                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ CHECK A CHARS SYMPATHY
+                    // Checks the active chars sympathy value and branches the script
+                    // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                    if (words[0] == "checksympathy")
+                    {
+                        String operat0r = words[1];
+                        String valuestr = words[2];
+                        int valueint;
+                        int.TryParse(valuestr, out valueint);
+
+                        if (operat0r == "bigger")
+                        {
+                            if (activechar.GetSympathy() <= valueint)
+                            {
+                                JumpToNext("endcheck");
+                            }
+                        }
+                        else if (operat0r == "smaller")
+                        {
+                            if (activechar.GetSympathy() >= valueint)
+                            {
+                                JumpToNext("endcheck");
+                            }
+                        }
+                        else if (operat0r == "equal")
+                        {
+                            if (activechar.GetSympathy() != valueint)
+                            {
+                                JumpToNext("endcheck");
+                            }
+                        }
+                        else if (operat0r == "notequal")
+                        {
+                            if (activechar.GetSympathy() == valueint)
+                            {
+                                JumpToNext("endcheck");
+                            }
+                        }
+                        else if (operat0r == "smallerequal")
+                        {
+                            if (activechar.GetSympathy() > valueint)
+                            {
+                                JumpToNext("endcheck");
+                            }
+                        }
+                        else if (operat0r == "biggerequal")
+                        {
+                            if (activechar.GetSympathy() < valueint)
+                            {
+                                JumpToNext("endcheck");
+                            }
+                        }
+                        else
+                        {
+                            Error("checksympathy", "Operator must be either 'equal' 'bigger' 'biggerequal' 'smaller' 'smallerequal' or 'notequal'");
+                        }
+                    }
+                    #endregion
                     // Audio Commands
                     #region Play Song
                     // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ PLAY A BACKGROUNDSONG
@@ -330,7 +389,7 @@ namespace CrashDate
                     #endregion
                     #region Change Sympathy
                     // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ CHANGE SYMPATHY
-                    // Adds to or takes from the "I like you"-parameter of that character
+                    // Adds to or takes from the "I like you"-parameter of the active character
                     // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     if (words[0] == "sympathy")
                     {

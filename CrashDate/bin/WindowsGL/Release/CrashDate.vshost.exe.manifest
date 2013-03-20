@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CrashDate.exe" size="24064">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CrashDate.exe" size="24576">
       <assemblyIdentity name="CrashDate" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>3udGgnAEP0nQ9TCisaz8ERLwXqY=</dsig:DigestValue>
+        <dsig:DigestValue>9CKnDcNZRa5Y7uLBb2jHGTURFFw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -228,13 +228,13 @@
       <dsig:DigestValue>NbNw8+y3MFhAQm240NWxf/S3MTY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Scripts\Test.cds" size="1764">
+  <file name="Content\Scripts\Test.cds" size="1751">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>44UWrE1bWfnNaStDa22zW60hfRo=</dsig:DigestValue>
+      <dsig:DigestValue>vQ2gFf4NHai53c8JhQ67KNjqkUA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Scripts\Test2.cds" size="132">

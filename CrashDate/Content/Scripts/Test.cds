@@ -1,8 +1,10 @@
 ﻿bgfade schneelandschaft
+fchar Testy
 body 2
 sfx bum
+checksympathy notequal 0
 s Heute ist ein schöner Tag!
-fchar Testy
+endcheck
 sfx speech
 bgset twgok
 //song Ohne Titel

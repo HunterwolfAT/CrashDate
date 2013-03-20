@@ -1,18 +1,17 @@
 ﻿bgfade schneelandschaft
+fchar Testy
 body 2
 sfx bum
+checksympathy notequal 0
 s Heute ist ein schöner Tag!
-fchar Testy
-sympathy inc 5
+endcheck
 sfx speech
 bgset twgok
 //song Ohne Titel
 	s So, ich bin hier also... wo zum geier bin ich denn hier?\nHab ich wieder zuviel gesoffen??
-	sympathy inc 5
 choice Geh auf sie zu.
 choice Sag weiter nichts.
 choice ask
-sympathy dec 2
 sfx bum
 // Geh auf sie zu
 	choice case 1
