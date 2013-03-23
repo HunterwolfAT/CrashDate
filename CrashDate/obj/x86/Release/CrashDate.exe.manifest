@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>9CKnDcNZRa5Y7uLBb2jHGTURFFw=</dsig:DigestValue>
+        <dsig:DigestValue>VQL+2cGsMBRjP8o+crQ7p9qp9nE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -129,6 +129,15 @@
       <dsig:DigestValue>8TlvLcP4NZZdIF2n/+4yotcyUXo=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\Audio\Songs\cavestory.xnb" size="24264809">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>+EarfmtuDb/CrUqRhINoC7dEbsI=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\Audio\speech.xnb" size="570273">
     <hash>
       <dsig:Transforms>
@@ -138,13 +147,13 @@
       <dsig:DigestValue>2KcCyFY2PbqNNiiC2xNEE5mwTPk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Fonts\MSGFont.xnb" size="67056">
+  <file name="Content\Fonts\MSGFont.xnb" size="36336">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>nMOqIIBh88PYGGFB8gxhnWEh4UI=</dsig:DigestValue>
+      <dsig:DigestValue>83AHKSNOfjDJ5tebZHIyy7K5sik=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Graphics\Chars\Testy\testy_angry.xnb" size="1884987">
@@ -228,13 +237,13 @@
       <dsig:DigestValue>NbNw8+y3MFhAQm240NWxf/S3MTY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Scripts\Test.cds" size="1751">
+  <file name="Content\Scripts\Test.cds" size="1743">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>vQ2gFf4NHai53c8JhQ67KNjqkUA=</dsig:DigestValue>
+      <dsig:DigestValue>yDN9SU33bXi7UZvQxx5jFvGnogk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Scripts\Test2.cds" size="132">

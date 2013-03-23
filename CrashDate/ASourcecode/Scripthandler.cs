@@ -399,11 +399,11 @@ namespace CrashDate
                         {
                             int valueint;
                             int.TryParse(valuestr, out valueint);
-                            if (option == "inc")
+                            if (option == "inc" || option == "+")
                             {
                                 activechar.IncreaseSympathy(valueint);
                             }
-                            else if (option == "dec")
+                            else if (option == "dec" || option == "-")
                             {
                                 activechar.DecreaseSympathy(valueint);
                             }
