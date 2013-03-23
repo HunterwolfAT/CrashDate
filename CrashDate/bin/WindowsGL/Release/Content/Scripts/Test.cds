@@ -1,11 +1,10 @@
-﻿bgfade schneelandschaft
+﻿song cavestory
+bgfade schneelandschaft
 fchar Testy
 body 2
-sfx bum
-checksympathy notequal 0
+checksympathy equal 0
 s Heute ist ein schöner Tag!
 endcheck
-sfx speech
 bgset twgok
 //song Ohne Titel
 	s So, ich bin hier also... wo zum geier bin ich denn hier?\nHab ich wieder zuviel gesoffen??

@@ -26,3 +26,4 @@ C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Co
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Audio\sfx.xnb
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Audio\speech.xnb
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Audio\bum.xnb
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Audio\Songs\cavestory.xnb

@@ -11,10 +11,11 @@ namespace CrashDate
     public class Audio
     {
         public Boolean mute = false;
-        public float volume = 1.0f;
+        public float sfxvolume = 1.0f;
+        public float musicvolume = 1.0f;
 
-        Song FirstSong;
-        Song SecondSong;
+        SoundEffect FirstSong;
+        SoundEffect SecondSong;
 
         SoundEffect Speechfile;
         SoundEffect SFX;
@@ -30,22 +31,22 @@ namespace CrashDate
         {
             if (FirstSong == null)
             {
-                FirstSong = myContentManager.Load<Song>("Audio\\Songs\\" + song);
+                FirstSong = myContentManager.Load<SoundEffect>("Audio\\Songs\\" + song);
                 SecondSong = null;
-                MediaPlayer.Play(FirstSong);
+                FirstSong.Play(musicvolume, 0f, 0f);
             }
             else if (SecondSong == null)
             {
-                SecondSong = myContentManager.Load<Song>("Audio\\Songs\\" + song);
+                SecondSong = myContentManager.Load<SoundEffect>("Audio\\Songs\\" + song);
                 FirstSong = null;
-                MediaPlayer.Play(SecondSong);
+                SecondSong.Play(musicvolume, 0f, 0f);
             }
         }
 
         public void PlaySFX(String sfx, ContentManager cm)
         {
             SFX = cm.Load<SoundEffect>("Audio\\" + sfx);
-            SFX.Play(volume, 0f, 0f);
+            SFX.Play(sfxvolume, 0f, 0f);
         }
     }
 }

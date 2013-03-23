@@ -47,12 +47,13 @@ namespace CrashDate
 
             textbox = new Sprite();
             textbox.LoadContent(myContentManager, "Graphics\\textbox");
-            textbox.Position = new Vector2(960, 850);
+            textbox.Position = new Vector2(960, 650);
 
             choicebox = new Sprite();
             choicebox.LoadContent(myContentManager, "Graphics\\choicebox");
 
             msgfont = myContentManager.Load<SpriteFont>("Fonts\\MSGFont");
+            msgfont.LineSpacing = 40;
 
             Questions = new List<string>();
         }
@@ -97,7 +98,7 @@ namespace CrashDate
 
         public void PrintMSGText(SpriteBatch mySpriteBatch, Vector2 position, Color color, Color bordercolor, Color namecolor)
         {
-            float scale = 1f;   // The thickness of the font-border
+            float scale = 0.8f;   // The thickness of the font-border
 
             bordercolor = Color.Black;
 
@@ -145,7 +146,7 @@ namespace CrashDate
                 int questioncounter = 0;
                 foreach (String question in Questions)
                 {
-                    choicebox.Position = new Vector2(960, 580 - (110 * questioncounter));
+                    choicebox.Position = new Vector2(640, 380 - (110 * questioncounter));
 
                     if (questioncounter == selectedchoice)
                         choicebox.Color = Color.Red;
@@ -153,7 +154,7 @@ namespace CrashDate
                         choicebox.Color = Color.White;
 
                     choicebox.Draw(mySpriteBatch, textboxopac);
-                    PrintText(mySpriteBatch, question, new Vector2(960 - (msgfont.MeasureString(question).X / 2), 550 - (110 * questioncounter)), Color.White, Color.Black);
+                    PrintText(mySpriteBatch, question, new Vector2(640 - (msgfont.MeasureString(question).X / 2), 370 - (110 * questioncounter)), Color.White, Color.Black);
                     questioncounter++;
                 }
             }
@@ -171,7 +172,7 @@ namespace CrashDate
 
         public void Draw(SpriteBatch mySpriteBatch) {
             textbox.Draw(mySpriteBatch, textboxopac);
-            PrintMSGText(mySpriteBatch, new Vector2(60, 720), Color.White, Color.Black, Color.DarkBlue);
+            PrintMSGText(mySpriteBatch, new Vector2(60, 520), Color.White, Color.Black, Color.DarkBlue);
             DrawChoices(mySpriteBatch);
         }
 

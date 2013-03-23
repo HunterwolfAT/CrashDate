@@ -20,11 +20,11 @@ namespace CrashDate
         GraphicsDeviceManager graphics;        // XNA Object that handles the graphicscard and screenmodes
         SpriteBatch spriteBatch;               // XNA Object that handles rendering sprites to the screen
 
-        int VHEIGHT = 1080;                    // The VIRTUAL Resolution - The resolution we are working with (fixed)
-        int VWIDTH = 1920;
+        int VHEIGHT = 720;                    // The VIRTUAL Resolution - The resolution we are working with (fixed)
+        int VWIDTH = 1280;
 
-        float HEIGHT = 1080f;                  // The RENDERED Resolution - This is the displayed resolution (changable)
-        float WIDTH = 1920f;
+        float HEIGHT = 720f;                  // The RENDERED Resolution - This is the displayed resolution (changable)
+        float WIDTH = 1280f;
 
         Boolean FULLSCREEN = false;
 
@@ -57,6 +57,8 @@ namespace CrashDate
 
             Resolution.SetVirtualResolution((int)WIDTH, (int)HEIGHT);
             Resolution.SetResolution(VWIDTH, VHEIGHT, FULLSCREEN);
+
+            Console.WriteLine(graphics.PreferredBackBufferHeight);
         }
 
         /// <summary>

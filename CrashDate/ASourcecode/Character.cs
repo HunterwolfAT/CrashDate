@@ -70,7 +70,7 @@ namespace CrashDate
         public void Draw(SpriteBatch mySpriteBatch) {
             if (active)
             {
-                bodies[actbody].Position = new Vector2(1100, 580);
+                bodies[actbody].Position = new Vector2(640, 380);
                 bodies[actbody].Color = new Color(255 - opacity, 255 - opacity, 255 - opacity, 255 - opacity);
                 bodies[actbody].Draw(mySpriteBatch);
             }
