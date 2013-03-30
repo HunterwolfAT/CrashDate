@@ -118,6 +118,7 @@ namespace CrashDate
             scripth.Update();
             gui.Update();
             charmanager.Update();
+            audio.Update();
 
             base.Update(gameTime);
         }

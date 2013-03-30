@@ -103,7 +103,7 @@ namespace CrashDate
                         {
                             if (words[2] == "player" || words[2] == "p")
                             {
-                                activechar = game.charmanager.GetChar("Player");
+                                activechar = game.charmanager.GetChar("Spieler");
                             }
                             else
                             {
@@ -309,9 +309,27 @@ namespace CrashDate
                         {
                             character = words[1];   
                         }
-                        activechar = game.charmanager.GetChar(character);
-                        activechar.active = true;
-                        activechar.Fade(true);
+
+                        // If there is already one char in screen, change the layout
+                        if (game.charmanager.NumberActiveChars() == 1)
+                        {
+                            //activechar.Move(290);   // Move the old active char to the left
+                            //// New active char
+                            //activechar = game.charmanager.GetChar(character);
+                            //activechar.active = true;
+                            //activechar.Fade(true);
+                            //activechar.Move(790);
+                            game.charmanager.TwoCharLayout(activechar, game.charmanager.GetChar(character));
+                            activechar = game.charmanager.GetChar(character);
+                            activechar.active = true;
+                            activechar.SetOpacity(255);
+                        }
+                        else    //If there is no char on screen yet
+                        {
+                            activechar = game.charmanager.GetChar(character);
+                            activechar.active = true;
+                            activechar.Fade(true);
+                        }
                     }
                     #endregion
                     #region Fade Out Character

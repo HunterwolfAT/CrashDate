@@ -12,10 +12,11 @@ namespace CrashDate
     {
         public Boolean mute = false;
         public float sfxvolume = 1.0f;
-        public float musicvolume = 1.0f;
+        public float musicvolume = 0.3f;
 
         SoundEffect FirstSong;
         SoundEffect SecondSong;
+        //SoundEffect ActiveSong;
 
         SoundEffect Speechfile;
         SoundEffect SFX;
@@ -47,6 +48,11 @@ namespace CrashDate
         {
             SFX = cm.Load<SoundEffect>("Audio\\" + sfx);
             SFX.Play(sfxvolume, 0f, 0f);
+        }
+
+        public void Update()
+        {
+            //Console.WriteLine(SecondSong.Duration);
         }
     }
 }

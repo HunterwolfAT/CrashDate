@@ -13,10 +13,15 @@ namespace CrashDate
         public String name;
         List<Sprite> bodies;
         List<Sprite> faces;
+        Vector2 position;
         public bool active;
         int opacity;
         int fading;
         int fadestep = 10;
+        bool moving;
+        int movespeed = 0;
+        int movetarget = 0;
+        int movecounter = 0;
         int actbody;
         int actface;
 
@@ -30,6 +35,8 @@ namespace CrashDate
             active = false;
             fading = 0;
             opacity = 0;
+
+            position = new Vector2(640, 380);
 
             bodies = new List<Sprite>();
             foreach (String path in bodiepics)
@@ -65,17 +72,62 @@ namespace CrashDate
                     fading = 0;
                 }
             }
+
+            if (moving)
+            {
+                if (movespeed < 5 && movecounter > 4 && Math.Abs(position.X - movetarget) > 15)
+                {
+                    movespeed++;
+                    movecounter = 0;
+                }
+                if (movespeed >= 5 && movecounter > 2 && Math.Abs(position.X - movetarget) <= 30)
+                {
+                    movespeed -= 1;
+                    movecounter = 0;
+                    if (movespeed <= 0)
+                        movespeed = 1;
+                }
+
+                if (movetarget > position.X)
+                {
+                    position = new Vector2(position.X + movespeed, position.Y);
+                    if (movetarget <= position.X)
+                    {
+                        position = new Vector2(movetarget, position.Y);
+                        moving = false;
+                    }
+                }
+                else
+                {
+                    position = new Vector2(position.X - movespeed, position.Y);
+                    if (movetarget >= position.X)
+                    {
+                        position = new Vector2(movetarget, position.Y);
+                        moving = false;
+                    }
+                }
+                Console.WriteLine(Math.Abs(position.X - movetarget).ToString());
+                movecounter++;
+            }
         }
 
         public void Draw(SpriteBatch mySpriteBatch) {
             if (active)
             {
-                bodies[actbody].Position = new Vector2(640, 380);
+                bodies[actbody].Position = position;
                 bodies[actbody].Color = new Color(255 - opacity, 255 - opacity, 255 - opacity, 255 - opacity);
                 bodies[actbody].Draw(mySpriteBatch);
             }
             //faces[actface].Position = new Vector2(1120, 380);
             //faces[actface].Draw(mySpriteBatch);
+        }
+
+        public void Move(int target)
+        {
+            movetarget = target;
+            movespeed = 0;
+            moving = true;
+            movecounter = 0;
         }
 
         public void ChangeFace(int face)
@@ -109,5 +161,9 @@ namespace CrashDate
         public void DecreaseSympathy(int value) {sympathy -= value;}
 
         public int GetSympathy()    {return sympathy;}
+
+        public bool IsMoving() { return moving; }
+
+        public void SetOpacity(int value) { opacity = value; }
     }
 }

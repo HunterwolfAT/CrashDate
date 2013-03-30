@@ -1,9 +1,11 @@
 ﻿song cavestory
 bgfade schneelandschaft
 fchar Testy
+fichar Testy
 body 2
 checksympathy equal 0
 s Heute ist ein schöner Tag!
+fichar Blondie
 endcheck
 bgset twgok
 //song Ohne Titel

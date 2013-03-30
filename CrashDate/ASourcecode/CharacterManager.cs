@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Content;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,13 @@ namespace CrashDate
     public class CharacterManager
     {
         private List<Character> characters;
+        Vector2 LeftPos = new Vector2(330, 380);
+        Vector2 RightPos = new Vector2(860, 380);
+        Vector2 CenterPos = new Vector2(640, 380);
+
+        Character layoutleftchar = null;
+        Character layoutrightchar = null;
+        bool layout2process = false;
 
         public CharacterManager()
         {
@@ -22,6 +30,21 @@ namespace CrashDate
             {
                 if (cha.active)
                     cha.Update();
+            }
+
+            if (layout2process)
+            {
+                Console.WriteLine("YEEEEEAAAAAAAH");
+                if (!layoutleftchar.IsMoving())
+                {
+                    layoutrightchar.Move((int)RightPos.X);
+                    layoutrightchar.Fade(true);
+
+                    layoutleftchar = null;
+                    layoutrightchar = null;
+                    layout2process = false;
+                    Console.WriteLine("WOOOOOOOOOP");
+                }
             }
         }
 
@@ -42,6 +65,12 @@ namespace CrashDate
             body.Add("testy_happy");
             body.Add("testy_shy");
             AddCharacter("Testy", body, face, myContentManager);
+
+            // Blondie
+            body.Clear();
+            face.Clear();
+            body.Add("blondie1");
+            AddCharacter("Blondie", body, face, myContentManager);
         }
 
         public void AddCharacter(String name, List<String> bodies, List<String> faces, ContentManager myContentManager)
@@ -66,6 +95,28 @@ namespace CrashDate
             {
                 cha.Draw(mySpriteBatch);
             }
+        }
+
+        public int NumberActiveChars()
+        {
+            int num = 0;
+            foreach (Character cha in characters)
+            {
+                if (cha.active)
+                {
+                    num++;
+                }
+            }
+
+            return num;
+        }
+
+        public void TwoCharLayout(Character left, Character right)
+        {
+            left.Move((int)LeftPos.X);
+            layoutleftchar = left;
+            layoutrightchar = right;
+            layout2process = true;
         }
     }
 }
