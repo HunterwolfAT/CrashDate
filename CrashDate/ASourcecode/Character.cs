@@ -75,14 +75,14 @@ namespace CrashDate
 
             if (moving)
             {
-                if (movespeed < 5 && movecounter > 4 && Math.Abs(position.X - movetarget) > 15)
+                if (movespeed < 7 && movecounter > 4 && Math.Abs(position.X - movetarget) > 15)
                 {
-                    movespeed++;
+                    movespeed+=2;
                     movecounter = 0;
                 }
-                if (movespeed >= 5 && movecounter > 2 && Math.Abs(position.X - movetarget) <= 30)
+                if (movespeed >= 7 && movecounter > 2 && Math.Abs(position.X - movetarget) <= 30)
                 {
-                    movespeed -= 1;
+                    movespeed -= 2;
                     movecounter = 0;
                     if (movespeed <= 0)
                         movespeed = 1;
@@ -106,13 +106,12 @@ namespace CrashDate
                         moving = false;
                     }
                 }
-                Console.WriteLine(Math.Abs(position.X - movetarget).ToString());
                 movecounter++;
             }
         }
 
         public void Draw(SpriteBatch mySpriteBatch) {
-            if (active)
+            if (active || fading != 0)
             {
                 bodies[actbody].Position = position;
                 bodies[actbody].Color = new Color(255 - opacity, 255 - opacity, 255 - opacity, 255 - opacity);

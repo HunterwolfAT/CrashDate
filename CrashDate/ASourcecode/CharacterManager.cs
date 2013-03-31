@@ -28,22 +28,18 @@ namespace CrashDate
         {
             foreach (Character cha in characters)
             {
-                if (cha.active)
-                    cha.Update();
+                cha.Update();
             }
 
             if (layout2process)
             {
-                Console.WriteLine("YEEEEEAAAAAAAH");
                 if (!layoutleftchar.IsMoving())
                 {
-                    layoutrightchar.Move((int)RightPos.X);
                     layoutrightchar.Fade(true);
 
                     layoutleftchar = null;
                     layoutrightchar = null;
                     layout2process = false;
-                    Console.WriteLine("WOOOOOOOOOP");
                 }
             }
         }
@@ -55,7 +51,7 @@ namespace CrashDate
             // Dummy Player Char
             List<String> body = new List<String>();
             List<String> face = new List<String>();
-            AddCharacter("Player", body, face, myContentManager);
+            AddCharacter("Spieler", body, face, myContentManager);
 
             // Testy
             body.Clear();
@@ -70,7 +66,16 @@ namespace CrashDate
             body.Clear();
             face.Clear();
             body.Add("blondie1");
+            body.Add("blondie2");
+            body.Add("blondie3");
             AddCharacter("Blondie", body, face, myContentManager);
+
+            // Schwarz
+            body.Clear();
+            face.Clear();
+            body.Add("schwarz1");
+            body.Add("schwarz2");
+            AddCharacter("Schwarz", body, face, myContentManager);
         }
 
         public void AddCharacter(String name, List<String> bodies, List<String> faces, ContentManager myContentManager)
@@ -111,9 +116,22 @@ namespace CrashDate
             return num;
         }
 
+        public void OneCharLayout(Character middle)
+        {
+            foreach (Character cha in characters)
+            {
+                if (cha.active && cha != middle)
+                {
+                    cha.Move((int)CenterPos.X);
+                }
+            }
+            middle.Fade(false);
+        }
+
         public void TwoCharLayout(Character left, Character right)
         {
             left.Move((int)LeftPos.X);
+            right.Move((int)RightPos.X);
             layoutleftchar = left;
             layoutrightchar = right;
             layout2process = true;

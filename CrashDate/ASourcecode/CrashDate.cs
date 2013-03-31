@@ -77,7 +77,7 @@ namespace CrashDate
             GameState = "Game";
 
             scripth = new Scripthandler(this);
-            scripth.PlayScript("Test");
+            scripth.PlayScript("Demo");
 
             charmanager = new CharacterManager();
             

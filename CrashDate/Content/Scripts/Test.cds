@@ -1,5 +1,5 @@
 ﻿song cavestory
-bgfade schneelandschaft
+bgfade beach
 fchar Testy
 fichar Testy
 body 2
@@ -10,6 +10,7 @@ endcheck
 bgset twgok
 //song Ohne Titel
 	s So, ich bin hier also... wo zum geier bin ich denn hier?\nHab ich wieder zuviel gesoffen??
+fochar Blondie
 choice Geh auf sie zu.
 choice Sag weiter nichts.
 choice ask
@@ -42,7 +43,7 @@ choice case end
 bgfade schneelandschaft
 	s Ah, viel besser.
 	s Oh, das ist ja Jemand!
-fichar Testy
+#fichar Testy
 body 2
 	s fchar p Hallo!
 fchar Testy

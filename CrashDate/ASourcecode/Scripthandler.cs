@@ -311,7 +311,7 @@ namespace CrashDate
                         }
 
                         // If there is already one char in screen, change the layout
-                        if (game.charmanager.NumberActiveChars() == 1)
+                        if (game.charmanager.NumberActiveChars() >= 1)
                         {
                             //activechar.Move(290);   // Move the old active char to the left
                             //// New active char
@@ -330,6 +330,7 @@ namespace CrashDate
                             activechar.active = true;
                             activechar.Fade(true);
                         }
+                        Console.WriteLine(game.charmanager.NumberActiveChars());
                     }
                     #endregion
                     #region Fade Out Character
@@ -351,7 +352,18 @@ namespace CrashDate
                         }
 
                         activechar = game.charmanager.GetChar(character);
-                        activechar.Fade(false);
+
+                        if (game.charmanager.NumberActiveChars() > 1)
+                        {
+                            game.charmanager.OneCharLayout(activechar);
+                            activechar.active = false;
+                        }
+                        else    //If there is only one char on screen
+                        {
+                            activechar.Fade(false);
+                            activechar.active = false;
+                        }
+                        Console.WriteLine(game.charmanager.NumberActiveChars());
                     }
                     #endregion
                     #region Focus Character
@@ -362,7 +374,7 @@ namespace CrashDate
                     {
                         if (words[1] == "player" || words[1] == "p")
                         {
-                            activechar = game.charmanager.GetChar("Player");
+                            activechar = game.charmanager.GetChar("Spieler");
                         }
                         else
                         {

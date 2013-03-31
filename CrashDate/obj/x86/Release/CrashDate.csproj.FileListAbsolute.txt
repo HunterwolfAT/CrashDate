@@ -28,3 +28,10 @@ C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Co
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Audio\Songs\cavestory.xnb
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Audio\bum.xnb
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Graphics\Chars\Blondie\blondie1.xnb
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Graphics\Chars\Blondie\blondie2.xnb
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Graphics\Chars\Blondie\blondie3.xnb
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Graphics\Chars\Schwarz\schwarz1.xnb
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Graphics\Chars\Schwarz\schwarz2.xnb
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Graphics\beach.xnb
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Graphics\blacky.xnb
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Scripts\Demo.cds
