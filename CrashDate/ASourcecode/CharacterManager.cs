@@ -128,8 +128,18 @@ namespace CrashDate
             middle.Fade(false);
         }
 
-        public void TwoCharLayout(Character left, Character right)
+        public void TwoCharLayout(Character right)
         {
+            Character left = null;
+
+            foreach (Character cha in characters)
+            {
+                if (cha.active)
+                {
+                    left = cha;
+                }
+            }
+
             left.Move((int)LeftPos.X);
             right.Move((int)RightPos.X);
             layoutleftchar = left;

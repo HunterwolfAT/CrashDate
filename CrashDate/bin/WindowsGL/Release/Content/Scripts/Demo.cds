@@ -31,8 +31,11 @@ choice Locker Ansprechen
 choice Anmachen
 choice ask
 s fchar Schwarz HEY!
+
 fichar Schwarz
 s So einfach kommst du mir nicht davon!
 s fc p Was?  Du schon wieder?!
 s fc Testy Was ist denn hier los, wer seid ihr??
 s fc p Ich hab auch keine Ahnung!
+fochar Schwarz
+s fc p LOL

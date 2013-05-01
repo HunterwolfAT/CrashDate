@@ -313,13 +313,17 @@ namespace CrashDate
                         // If there is already one char in screen, change the layout
                         if (game.charmanager.NumberActiveChars() >= 1)
                         {
+                            //Console.WriteLine("More than one character is already on screen. Moving to a TWO CHAR LAYOUT.");
+                            //Console.WriteLine(activechar.name);
+                            //Console.WriteLine(game.charmanager.GetChar(character).name);
+
                             //activechar.Move(290);   // Move the old active char to the left
                             //// New active char
                             //activechar = game.charmanager.GetChar(character);
                             //activechar.active = true;
                             //activechar.Fade(true);
                             //activechar.Move(790);
-                            game.charmanager.TwoCharLayout(activechar, game.charmanager.GetChar(character));
+                            game.charmanager.TwoCharLayout(game.charmanager.GetChar(character));
                             activechar = game.charmanager.GetChar(character);
                             activechar.active = true;
                             activechar.SetOpacity(255);
@@ -330,7 +334,7 @@ namespace CrashDate
                             activechar.active = true;
                             activechar.Fade(true);
                         }
-                        Console.WriteLine(game.charmanager.NumberActiveChars());
+                        
                     }
                     #endregion
                     #region Fade Out Character
@@ -363,7 +367,6 @@ namespace CrashDate
                             activechar.Fade(false);
                             activechar.active = false;
                         }
-                        Console.WriteLine(game.charmanager.NumberActiveChars());
                     }
                     #endregion
                     #region Focus Character
@@ -507,7 +510,7 @@ namespace CrashDate
                     if (Script[cPointer - 1].Substring(0, 6) == "choice" && game.gui.showchoice)
                     {
                         selectedchoice = choice + 1;        // Lets not make it start at 0
-                        Console.WriteLine(selectedchoice);
+                        //Console.WriteLine(selectedchoice);
                         goToNextCommand = true;
                         game.gui.CleanUpChoices();
                     }
