@@ -30,17 +30,20 @@ namespace CrashDate
         public Audio(ContentManager contentman)
         {
             myContentManager = contentman;
-            MediaPlayer.Volume = 0.4f;
+            MediaPlayer.Volume = sfxvolume;
+
+            if (!Bass.BASS_Init(-1, 44100, BASSInit.BASS_DEVICE_DEFAULT, IntPtr.Zero))
+                Console.WriteLine("ERROR: Couldnt initialize Audiodevice.");
+            
+            Bass.BASS_SetVolume(musicvolume);                
         }
 
         public void PlaySong(String song)
         {
             Console.WriteLine("Trying to play song...");
-            
-            if (Bass.BASS_Init(-1, 44100, BASSInit.BASS_DEVICE_DEFAULT, IntPtr.Zero))
-                stream = Bass.BASS_StreamCreateFile("Content\\Audio\\Songs\\" + song, 0, 0, BASSFlag.BASS_DEFAULT);
-            else
-                Console.WriteLine("ERROR: Couldnt initialize Audiodevice.");
+
+            stream = 0;
+            stream = Bass.BASS_StreamCreateFile("Content\\Audio\\Songs\\" + song, 0, 0, BASSFlag.BASS_DEFAULT);
 
             if (stream != 0)
             {
