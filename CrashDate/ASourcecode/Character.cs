@@ -129,6 +129,11 @@ namespace CrashDate
             movecounter = 0;
         }
 
+        public void reset()
+        {
+            position = new Vector2(640, 380);
+        }
+
         public void ChangeFace(int face)
         {
             if (face <= faces.Count)

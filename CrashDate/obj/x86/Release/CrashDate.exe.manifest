@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Z3i76QYUS7lrhlM56ImxpNEZR3s=</dsig:DigestValue>
+        <dsig:DigestValue>Q0VPutIL0nASEZq1IvNUZBa0Tj4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,19 +62,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>LPvLvklRNPC1ky1TzXAh76ljq3Y=</dsig:DigestValue>
+        <dsig:DigestValue>6ynZ55YDZG9VNtw9K2uJ3/Ugfng=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MonoGame.Framework.dll" size="637440">
-      <assemblyIdentity name="MonoGame.Framework" version="3.0.1.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MonoGame.Framework.dll" size="664064">
+      <assemblyIdentity name="MonoGame.Framework" version="3.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>m+645q0432PCNQCTJ3LhXwPU3nk=</dsig:DigestValue>
+        <dsig:DigestValue>Mbys9UkpSUmAbxcCbSOOGpGm07Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -136,6 +136,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>+EarfmtuDb/CrUqRhINoC7dEbsI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Audio\Songs\doublerainboom.wav" size="30247038">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>6Ig9RwHheZ8ltVlmAgD2Az+Z4d4=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Audio\speech.xnb" size="570273">
@@ -300,13 +309,13 @@
       <dsig:DigestValue>NbNw8+y3MFhAQm240NWxf/S3MTY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Scripts\Demo.cds" size="1912">
+  <file name="Content\Scripts\Demo.cds" size="1968">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>fyce/ZwdpqvvjaaipxHif22UnbA=</dsig:DigestValue>
+      <dsig:DigestValue>M+qFvrJleYwq3Z6ugSb5zRzaeoc=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Scripts\Test.cds" size="1779">

@@ -1,4 +1,5 @@
 ﻿bgset blacky
+song doublerainboom.wav
 s fchar player This is it. Jetzt gibt es kein Zurück mehr!
 s Dieses Jahr ist mein Jahr. Es gibt keinen Tag an den ich öfter denke. Ich bin perfekt vorbereitet.
 s AUF....
@@ -10,7 +11,10 @@ s Oh, da ist ja auch schon Jemand!\n.....sie.... sie kommt auf mich zu...!
 fichar Schwarz
 s fchar Schwarz ....
 s fc p .....Hi?!
+fichar Testy
 s fc Schwarz Endlich bist du hier. Ich habe auf dich gewartet.
+s fc Testy test
+fochar Testy
 s fc p Echt? ....Öhm, kenne ich dich?
 s fc Schwarz Du warst die letzten Jahre hier am Strand, ich habe gesehen wie du hier nach\nMädchen ausschau gehalten hast. Nun...
 s fc p ...."Nun"?
@@ -31,11 +35,9 @@ choice Locker Ansprechen
 choice Anmachen
 choice ask
 s fchar Schwarz HEY!
-
 fichar Schwarz
 s So einfach kommst du mir nicht davon!
 s fc p Was?  Du schon wieder?!
+fochar Schwarz
 s fc Testy Was ist denn hier los, wer seid ihr??
 s fc p Ich hab auch keine Ahnung!
-fochar Schwarz
-s fc p LOL

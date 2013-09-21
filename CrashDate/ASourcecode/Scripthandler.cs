@@ -332,6 +332,7 @@ namespace CrashDate
                         {
                             activechar = game.charmanager.GetChar(character);
                             activechar.active = true;
+                            activechar.reset();
                             activechar.Fade(true);
                         }
                         

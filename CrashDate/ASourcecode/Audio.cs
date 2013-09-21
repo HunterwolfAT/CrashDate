@@ -14,8 +14,8 @@ namespace CrashDate
         public float sfxvolume = 1.0f;
         public float musicvolume = 0.3f;
 
-        SoundEffect FirstSong;
-        SoundEffect SecondSong;
+        Song FirstSong;
+        Song SecondSong;
         //SoundEffect ActiveSong;
 
         SoundEffect Speechfile;
@@ -26,21 +26,24 @@ namespace CrashDate
         public Audio(ContentManager contentman)
         {
             myContentManager = contentman;
+            MediaPlayer.Volume = 0.4f;
         }
 
         public void PlaySong(String song)
         {
             if (FirstSong == null)
             {
-                FirstSong = myContentManager.Load<SoundEffect>("Audio\\Songs\\" + song);
+                FirstSong = myContentManager.Load<Song>("Audio\\Songs\\" + song);
                 SecondSong = null;
-                FirstSong.Play(musicvolume, 0f, 0f);
+                //FirstSong.Play(musicvolume, 0f, 0f);
+                MediaPlayer.Play(FirstSong);
             }
             else if (SecondSong == null)
             {
-                SecondSong = myContentManager.Load<SoundEffect>("Audio\\Songs\\" + song);
+                SecondSong = myContentManager.Load<Song>("Audio\\Songs\\" + song);
                 FirstSong = null;
-                SecondSong.Play(musicvolume, 0f, 0f);
+                //SecondSong.Play(musicvolume, 0f, 0f);
+                MediaPlayer.Play(SecondSong);
             }
         }
 

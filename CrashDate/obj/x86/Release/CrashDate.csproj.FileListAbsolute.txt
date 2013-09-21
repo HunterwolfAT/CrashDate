@@ -35,3 +35,4 @@ C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Co
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Graphics\beach.xnb
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Graphics\blacky.xnb
 C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Scripts\Demo.cds
+C:\Users\haudi_000\Documents\GitHub\CrashDate\CrashDate\bin\WindowsGL\Release\Content\Audio\Songs\doublerainboom.wav
