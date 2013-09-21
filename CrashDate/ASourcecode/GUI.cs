@@ -46,8 +46,8 @@ namespace CrashDate
             //background.LoadContent(myContentManager, "Graphics\\527322");
 
             textbox = new Sprite();
-            textbox.LoadContent(myContentManager, "Graphics\\textbox");
-            textbox.Position = new Vector2(960, 650);
+            textbox.LoadContent(myContentManager, "Graphics\\Textbox");
+            textbox.Position = new Vector2(640, 340);
 
             choicebox = new Sprite();
             choicebox.LoadContent(myContentManager, "Graphics\\choicebox");

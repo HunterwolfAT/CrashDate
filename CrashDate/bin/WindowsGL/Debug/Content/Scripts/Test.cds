@@ -1,38 +1,69 @@
-﻿bgset twgok
-s So, ich bin hier also... wo zum geier bin ich denn hier?\nHab ich wieder zuviel gesoffen??
-s Ich, ähm, bin dann mal weg. Raus hier.
-bgfade schneelandschaft
-s Ah, viel besser.
-s Oh, das ist ja Jemand!
+﻿song cavestory
+bgfade beach
+fchar Testy
 fichar Testy
 body 2
-s Hallo!
-body 0
-s ...
-s Kannst du nicht sprechen?\nDas ist okay. Ich spreche auch nicht so gern.\nAusser halt jetzt grade.
-s Wir können auch beide zusammen nicht sprechen! Pass auf!
-s ...
-body 3
-s ... ...
-s ... ... ...
-body 1
-s ... ... ... ...
-s Oh, oh. Ich glaub das mag sie gar nicht.
-fochar Testy
-s Dann halt nicht....
-s ENDE
+checksympathy equal 0
+s Heute ist ein schöner Tag!
+fichar Blondie
+endcheck
+bgset twgok
+//song Ohne Titel
+	s So, ich bin hier also... wo zum geier bin ich denn hier?\nHab ich wieder zuviel gesoffen??
+fochar Blondie
+choice Geh auf sie zu.
+choice Sag weiter nichts.
+choice ask
+sfx bum
+// Geh auf sie zu
+	choice case 1
+		s Okay, ich werd mal versuchen sie anzusprechen.
+		s Hallo? Mädchen? Was... bist du?
+		s ...
+		s Keine Antwort.
+		choice Ach, mir doch egal.
+		choice Genauer hinsehen.
+		choice ask
+		// Ach, mir doch egal
+			choice case 1
+				s Tjoa, wenn sie nicht will, braucht es mich auch nicht zu stören.
+				s Wo ist den hier der Ausgang?
+		// Genauer hinsehen.
+			choice case 2
+				s Hey, Moment mal! Das ist ja nur ein Hintergrund! Pah!
+				s So wird man auch schlauer.
+		choice case end
+// Sag weiter nichts
+	choice case 2
+		s Ja, ich denke es ist besser wenn ich mich aus dem Staub mache.
+		s Nicht noch dass sie mir hier was vorsingt oder so. *Schauder*
+choice case end
 
-// Den Hintergrund auf das Bild "Schneelandschaft" setzen
-//bgset schneelandschaft
-// Die erste Textbox ausgeben
-//s Bitte gib diesen Text aus
-// Den Hintergrund auf "twgok" ändern
-//bgfade twgok
-// Charakter "Testy" aktiveren
-// fichar Testy
-// Mehr Sätze sagen
-//s Und dann noch einen.\nJa diesen! Sehr gut! So ist das!
-//body 2
-//s Einfach einen Satz nach dem anderen. Sehr schön.
-//s So einfach geht das. Und dann wird eine Dating Sim daraus. Oder eine Visual Novel.\nJe nachdem wie man es sieht. Gehört ja beides zu den J-Adventures. Ach diese verrückten Japaner.\nMan muss sie doch einfach lieben!
-//run Test2
+	s Ich, ähm, bin dann mal weg. Raus hier.
+bgfade schneelandschaft
+	s Ah, viel besser.
+	s Oh, das ist ja Jemand!
+#fichar Testy
+body 2
+	s fchar p Hallo!
+fchar Testy
+body 0
+	s fchar Testy ...
+	s fchar p Kannst du nicht sprechen?\nDas ist okay. Ich spreche auch nicht so gern.\nAusser halt jetzt grade.
+	s Wir können auch beide zusammen nicht sprechen! Pass auf!
+	s fchar Testy ...
+body 3
+	s ... ...
+	s fchar p ... ... ...
+fchar Testy
+body 1
+	s ... ... ... ...
+	s fchar p Oh, oh. Ich glaub das mag sie gar nicht.
+	s Was soll ich am besten tun?
+choice Geh auf sie zu.
+choice Sag weiter nichts.
+choice ask
+fochar Testy
+	s fchar p Dann halt nicht....
+	s ENDE
+run Test2
