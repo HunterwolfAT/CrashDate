@@ -47,7 +47,7 @@ namespace CrashDate
 
             textbox = new Sprite();
             textbox.LoadContent(myContentManager, "Graphics\\Textbox");
-            textbox.Position = new Vector2(640, 340);
+            textbox.Position = new Vector2(640, 360);
 
             choicebox = new Sprite();
             choicebox.LoadContent(myContentManager, "Graphics\\choicebox");
@@ -170,10 +170,14 @@ namespace CrashDate
             }
         }
 
-        public void Draw(SpriteBatch mySpriteBatch) {
+        public void Draw(SpriteBatch mySpriteBatch, Boolean exportPrompt) {
             textbox.Draw(mySpriteBatch, textboxopac);
             PrintMSGText(mySpriteBatch, new Vector2(60, 520), Color.White, Color.Black, Color.DarkBlue);
             DrawChoices(mySpriteBatch);
+            if (exportPrompt)
+            {
+                PrintText(mySpriteBatch, "Drücke Enter um das momentan ausgeführte Script zu exportieren. ESC zum Abbrechen.", new Vector2(50, 340), Color.Black, Color.White);
+            }
         }
 
         public void SetMSGSpeed(float speed)

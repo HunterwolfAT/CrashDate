@@ -62,7 +62,7 @@ namespace CrashDate
 
         public void Update()
         {
-            Console.WriteLine("Song Duration (in Bytes): " + Bass.BASS_ChannelGetPosition(stream) + "/" + Bass.BASS_ChannelGetLength(stream).ToString());
+            //Console.WriteLine("Song Duration (in Bytes): " + Bass.BASS_ChannelGetPosition(stream) + "/" + Bass.BASS_ChannelGetLength(stream).ToString());
             // If the song plays out - repeat it!
             if (Bass.BASS_ChannelGetPosition(stream) == Bass.BASS_ChannelGetLength(stream))
                 Bass.BASS_ChannelPlay(stream, true);

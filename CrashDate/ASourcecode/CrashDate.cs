@@ -41,6 +41,8 @@ namespace CrashDate
         // Control variables
         KeyboardState newkeystate;  // Saves the current state of the keyboard
         KeyboardState oldkeystate;  // Saves the state of the keyboard of the last tick
+        // Various
+        Boolean PromptScriptExport; // "Do you want to export the script?"
 
         // Game Constructor
         public Game1() : base()
@@ -75,6 +77,7 @@ namespace CrashDate
             audio = new Audio(this.Content);
 
             GameState = "Game";
+            PromptScriptExport = false;
 
             scripth = new Scripthandler(this);
             scripth.PlayScript("Demo");
@@ -145,20 +148,28 @@ namespace CrashDate
 
                 charmanager.Draw(spriteBatch);
 
-                gui.Draw(spriteBatch);
+                gui.Draw(spriteBatch, PromptScriptExport);
             }
 
             spriteBatch.End();
             base.Draw(gameTime);
         }
 
+        /// <summary>
+        /// This is where the keyboard and mouse checks are.
+        /// </summary>
         private void CheckControls()
         {
             newkeystate = Keyboard.GetState();
 
             // END THE GAME
-            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
+            if (newkeystate.IsKeyUp(Keys.Escape) && oldkeystate.IsKeyDown(Keys.Escape))
+            {
+                if (PromptScriptExport)
+                    PromptScriptExport = false;
+                else
+                    Exit();
+            }
 
             // PRESSING ENTER
             if (newkeystate.IsKeyDown(Keys.Enter) && oldkeystate.IsKeyUp(Keys.Enter))
@@ -176,6 +187,13 @@ namespace CrashDate
                     gui.SetMSGSpeed(1f);
                     scripth.PushAccept(gui.selectedchoice);
                 }
+
+                if (PromptScriptExport)
+                {
+                    scripth.ExportScript();
+                    PromptScriptExport = false;
+                }
+
             }
 
             // UP and DOWN ARROWS - SELECTING STUFF!
@@ -219,6 +237,14 @@ namespace CrashDate
             if (newkeystate.IsKeyDown(Keys.F5) && oldkeystate.IsKeyUp(Keys.F5))
             {
                 Resolution.ToggleFullscreen();
+            }
+            // EXPORT THE SCRIPT TO A... SCRIPT FOR VOICE ACTORS
+            if (newkeystate.IsKeyDown(Keys.F8) && oldkeystate.IsKeyUp(Keys.F8))
+            {
+                if (!PromptScriptExport)
+                {
+                    PromptScriptExport = true;
+                }
             }
 
             oldkeystate = newkeystate;

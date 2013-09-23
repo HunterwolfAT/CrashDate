@@ -93,7 +93,7 @@ namespace CrashDate
                     // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ SAY COMMAND
                     // Print a MSG in the Textbox.
                     // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    if (words[0] == "s")
+                    if (words[0] == "s" || words[0] == "say")
                     {
                         String msg = "";
                         int startingpoint = 1;
@@ -515,6 +515,35 @@ namespace CrashDate
                         goToNextCommand = true;
                         game.gui.CleanUpChoices();
                     }
+                }
+            }
+        }
+
+        public void ExportScript()
+        {
+            Console.WriteLine("Exporting script: " + scriptName);
+            int lineNumber = 1;
+
+            for (int sPointer = 0; sPointer < Script.Count(); sPointer++)
+            {
+                String[] words = Script[sPointer].Split(' ');
+
+                if (words[0] == "s" || words[0] == "say")
+                {
+                    String msg = "";
+                    int startingpoint = 1;
+
+                    for (int x = startingpoint; x < words.Count(); x++)
+                    {
+                        if (words[x] != "fchar" && words[x] != "focuschar" && words[x] != "fc" && words[x] != "player" && words[x] != "p" && game.charmanager.GetChar(words[x]) == null)
+                        {
+                            msg += words[x] + " ";
+                        }
+                    }
+                    msg = msg.Replace("\\n", System.Environment.NewLine);
+
+                    Console.WriteLine(lineNumber + ": " + msg);
+                    lineNumber++;
                 }
             }
         }
