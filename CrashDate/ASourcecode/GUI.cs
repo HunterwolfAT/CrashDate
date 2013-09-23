@@ -96,11 +96,9 @@ namespace CrashDate
             MSGCounter = 0f;
         }
 
-        public void PrintMSGText(SpriteBatch mySpriteBatch, Vector2 position, Color color, Color bordercolor, Color namecolor)
+        public void PrintMSGText(SpriteBatch mySpriteBatch, Vector2 position, Color color, Color namecolor, Color bordercolor)
         {
             float scale = 0.8f;   // The thickness of the font-border
-
-            bordercolor = Color.Black;
 
             // Draw the border for the Name
             mySpriteBatch.DrawString(msgfont, SpeakingChar, new Vector2(position.X, position.Y - 50) + new Vector2(1 * scale, 1 * scale), bordercolor);
@@ -126,7 +124,7 @@ namespace CrashDate
         {
             float scale = 1f;   // The thickness of the font-border
 
-            bordercolor = Color.Black;
+            //bordercolor = Color.Black;
 
             // Draw the border
             mySpriteBatch.DrawString(msgfont, text, position + new Vector2(1 * scale, 1 * scale), bordercolor);
@@ -172,7 +170,7 @@ namespace CrashDate
 
         public void Draw(SpriteBatch mySpriteBatch, Boolean exportPrompt) {
             textbox.Draw(mySpriteBatch, textboxopac);
-            PrintMSGText(mySpriteBatch, new Vector2(60, 520), Color.White, Color.Black, Color.DarkBlue);
+            PrintMSGText(mySpriteBatch, new Vector2(60, 520), Color.White, Color.DarkBlue, Color.Black);
             DrawChoices(mySpriteBatch);
             if (exportPrompt)
             {
