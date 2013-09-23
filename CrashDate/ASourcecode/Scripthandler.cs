@@ -524,6 +524,8 @@ namespace CrashDate
             Console.WriteLine("Exporting script: " + scriptName);
             int lineNumber = 1;
 
+            String activeCharName = game.charmanager.GetChar("Spieler").name;
+
             for (int sPointer = 0; sPointer < Script.Count(); sPointer++)
             {
                 String[] words = Script[sPointer].Split(' ');
@@ -535,18 +537,25 @@ namespace CrashDate
 
                     for (int x = startingpoint; x < words.Count(); x++)
                     {
-                        if (words[x] != "fchar" && words[x] != "focuschar" && words[x] != "fc")
+                        if (words[x] == "fchar" || words[x] == "focuschar" || words[x] == "fc")
                         {
+                            String charname = words[x + 1];
 
+                            if (charname == "player" || charname == "p")
+                                charname = game.charmanager.GetChar("Spieler").name;
+
+                            if (game.charmanager.GetChar(charname) != null)
+                                activeCharName = game.charmanager.GetChar(charname).name;
                         }
-                        else if (words[x] != "player" && words[x] != "p" && game.charmanager.GetChar(words[x]) == null)
+                        
+                        if (words[x] != "fchar" && words[x] != "focuschar" && words[x] != "fc" && words[x] != "player" && words[x] != "p" && game.charmanager.GetChar(words[x]) == null)
                         {
                             msg += words[x] + " ";
                         }
                     }
                     msg = msg.Replace("\\n", System.Environment.NewLine);
 
-                    Console.WriteLine(lineNumber + ": " + msg);
+                    Console.WriteLine(lineNumber + " " + activeCharName + ": " + msg);
                     lineNumber++;
                 }
             }
