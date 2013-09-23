@@ -1,6 +1,6 @@
 ﻿bgset blacky
 song doublerainboom.wav
-s fchar player This is it. Jetzt gibt es kein Zurück mehr!
+s This is it. Jetzt gibt es kein Zurück mehr!
 s Dieses Jahr ist mein Jahr. Es gibt keinen Tag an den ich öfter denke. Ich bin perfekt vorbereitet.
 s AUF....
 bgfade beach

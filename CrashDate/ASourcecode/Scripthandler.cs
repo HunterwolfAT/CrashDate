@@ -85,7 +85,7 @@ namespace CrashDate
                     String[] words = Script[cPointer].Split(' ');
 
                     if (activechar == null)
-                        activechar = game.charmanager.GetChar("Player");
+                        activechar = game.charmanager.GetChar("Spieler");
 
                     // ALL OF THE COMMANDS ARE HERE!
                     // General Commands
@@ -535,7 +535,11 @@ namespace CrashDate
 
                     for (int x = startingpoint; x < words.Count(); x++)
                     {
-                        if (words[x] != "fchar" && words[x] != "focuschar" && words[x] != "fc" && words[x] != "player" && words[x] != "p" && game.charmanager.GetChar(words[x]) == null)
+                        if (words[x] != "fchar" && words[x] != "focuschar" && words[x] != "fc")
+                        {
+
+                        }
+                        else if (words[x] != "player" && words[x] != "p" && game.charmanager.GetChar(words[x]) == null)
                         {
                             msg += words[x] + " ";
                         }

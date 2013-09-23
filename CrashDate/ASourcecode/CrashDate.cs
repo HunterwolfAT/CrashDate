@@ -79,11 +79,11 @@ namespace CrashDate
             GameState = "Game";
             PromptScriptExport = false;
 
+            charmanager = new CharacterManager();
+
             scripth = new Scripthandler(this);
             scripth.PlayScript("Demo");
 
-            charmanager = new CharacterManager();
-            
             base.Initialize();
         }
 
